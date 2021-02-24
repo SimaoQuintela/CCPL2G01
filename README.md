@@ -1,2 +1,2 @@
 # CCPL2G01
-Laboratórios de Algoritmia I
+Group 01 - Laboratórios De Algoritmia I

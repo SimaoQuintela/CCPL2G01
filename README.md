@@ -1,7 +1,7 @@
 # CCPL2G01
 Grupo 01 - Laboratórios De Algoritmia I
 
-Grupo composto por:
+Grupo composto por: <br/>
 · A97444 - Simão Quintela <br/>
 · A96463 - Hugo Rocha <br/>
 · A97369 - Tiago Guedes <br/>

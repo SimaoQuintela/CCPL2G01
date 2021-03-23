@@ -1,0 +1,84 @@
+\hypertarget{stack_8h}{}\doxysection{stack.\+h File Reference}
+\label{stack_8h}\index{stack.h@{stack.h}}
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structSTACK}{S\+T\+A\+CK}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{stack_8h_a8bedb3c812e6f4669774331392c72d0a}{L\+E\+N\+G\+T\+H\+\_\+\+S\+T\+A\+CK}}~5120
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structSTACK}{S\+T\+A\+CK}} \mbox{\hyperlink{stack_8h_ad4ef53e7d74fdb084ff2236e9128b3d5}{N\+E\+W\+\_\+\+S\+T\+A\+CK}} ()
+\item 
+void \mbox{\hyperlink{stack_8h_ac119efd8eee287cd02174dbf417feacd}{P\+U\+SH}} (\mbox{\hyperlink{structSTACK}{S\+T\+A\+CK}} $\ast$s, int valor)
+\item 
+long \mbox{\hyperlink{stack_8h_ace260e73cb048c8c06cf9d63889f5578}{P\+OP}} (\mbox{\hyperlink{structSTACK}{S\+T\+A\+CK}} $\ast$s)
+\item 
+void \mbox{\hyperlink{stack_8h_a5c74265888d9b3fe150735121868caa8}{P\+R\+I\+N\+T\+\_\+\+S\+T\+A\+CK}} (\mbox{\hyperlink{structSTACK}{S\+T\+A\+CK}} s)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{stack_8h_a8bedb3c812e6f4669774331392c72d0a}\label{stack_8h_a8bedb3c812e6f4669774331392c72d0a}} 
+\index{stack.h@{stack.h}!LENGTH\_STACK@{LENGTH\_STACK}}
+\index{LENGTH\_STACK@{LENGTH\_STACK}!stack.h@{stack.h}}
+\doxysubsubsection{\texorpdfstring{LENGTH\_STACK}{LENGTH\_STACK}}
+{\footnotesize\ttfamily \#define L\+E\+N\+G\+T\+H\+\_\+\+S\+T\+A\+CK~5120}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{stack_8h_ad4ef53e7d74fdb084ff2236e9128b3d5}\label{stack_8h_ad4ef53e7d74fdb084ff2236e9128b3d5}} 
+\index{stack.h@{stack.h}!NEW\_STACK@{NEW\_STACK}}
+\index{NEW\_STACK@{NEW\_STACK}!stack.h@{stack.h}}
+\doxysubsubsection{\texorpdfstring{NEW\_STACK()}{NEW\_STACK()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structSTACK}{S\+T\+A\+CK}} N\+E\+W\+\_\+\+S\+T\+A\+CK (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyAuthor}{Author}
+Simão Quintela \textbackslash{}brlef N\+E\+W\+\_\+\+S\+T\+A\+CK -\/ Função responsável por criar e inicializar a stack.
+\end{DoxyAuthor}
+\begin{DoxyReturn}{Returns}
+Retorna a Stack. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{stack_8h_ace260e73cb048c8c06cf9d63889f5578}\label{stack_8h_ace260e73cb048c8c06cf9d63889f5578}} 
+\index{stack.h@{stack.h}!POP@{POP}}
+\index{POP@{POP}!stack.h@{stack.h}}
+\doxysubsubsection{\texorpdfstring{POP()}{POP()}}
+{\footnotesize\ttfamily long P\+OP (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSTACK}{S\+T\+A\+CK}} $\ast$}]{s }\end{DoxyParamCaption})}
+
+\begin{DoxyAuthor}{Author}
+Nuno Costa \textbackslash{}brlef Função P\+OP -\/ Função responsável por retirar o elemento que está no topo da stack e decrementar o stack pointer.
+\end{DoxyAuthor}
+\begin{DoxyReturn}{Returns}
+decrementa 1 posição ao apontador e retorna o elemento que está nessa posição 
+\end{DoxyReturn}
+\mbox{\Hypertarget{stack_8h_a5c74265888d9b3fe150735121868caa8}\label{stack_8h_a5c74265888d9b3fe150735121868caa8}} 
+\index{stack.h@{stack.h}!PRINT\_STACK@{PRINT\_STACK}}
+\index{PRINT\_STACK@{PRINT\_STACK}!stack.h@{stack.h}}
+\doxysubsubsection{\texorpdfstring{PRINT\_STACK()}{PRINT\_STACK()}}
+{\footnotesize\ttfamily void P\+R\+I\+N\+T\+\_\+\+S\+T\+A\+CK (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSTACK}{S\+T\+A\+CK}}}]{s }\end{DoxyParamCaption})}
+
+\begin{DoxyAuthor}{Author}
+Nuno Costa \textbackslash{}brlef Função P\+R\+I\+N\+T\+\_\+\+S\+T\+A\+CK -\/ Função responsável por imprimir a stack. 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{stack_8h_ac119efd8eee287cd02174dbf417feacd}\label{stack_8h_ac119efd8eee287cd02174dbf417feacd}} 
+\index{stack.h@{stack.h}!PUSH@{PUSH}}
+\index{PUSH@{PUSH}!stack.h@{stack.h}}
+\doxysubsubsection{\texorpdfstring{PUSH()}{PUSH()}}
+{\footnotesize\ttfamily void P\+U\+SH (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSTACK}{S\+T\+A\+CK}} $\ast$}]{s,  }\item[{int}]{valor }\end{DoxyParamCaption})}
+
+\begin{DoxyAuthor}{Author}
+Simão Quintela \textbackslash{}brlef Função P\+U\+SH -\/ Função responsável por acrescentar elementos à stack e incrementar o stack pointer. 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em valor} & -\/ valor a colocar no local para onde o apontador está a apontar antes do incremento. \\
+\hline
+\end{DoxyParams}

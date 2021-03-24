@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="stack_8c" kind="file" language="C++">
+    <compoundname>stack.c</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes refid="stack_8h" local="yes">stack.h</includes>
+    <incdepgraph>
+      <node id="4">
+        <label>stdlib.h</label>
+      </node>
+      <node id="3">
+        <label>string.h</label>
+      </node>
+      <node id="1">
+        <label>stack.c</label>
+        <link refid="stack_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>stack.h</label>
+        <link refid="stack_8h"/>
+      </node>
+      <node id="2">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="stack_8c_1ad4ef53e7d74fdb084ff2236e9128b3d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structSTACK" kindref="compound">STACK</ref></type>
+        <definition>STACK NEW_STACK</definition>
+        <argsstring>()</argsstring>
+        <name>NEW_STACK</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Simão Quintela \brlef NEW_STACK - Função responsável por criar e inicializar a stack.</para>
+</simplesect>
+<simplesect kind="return"><para>Retorna a Stack. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="stack.c" line="16" column="7" bodyfile="stack.c" bodystart="16" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="stack_8c_1ac119efd8eee287cd02174dbf417feacd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PUSH</definition>
+        <argsstring>(STACK *s, int valor)</argsstring>
+        <name>PUSH</name>
+        <param>
+          <type><ref refid="structSTACK" kindref="compound">STACK</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>valor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Simão Quintela \brlef Função PUSH - Função responsável por acrescentar elementos à stack e incrementar o stack pointer. </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>valor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- valor a colocar no local para onde o apontador está a apontar antes do incremento. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="stack.c" line="30" column="6" bodyfile="stack.c" bodystart="30" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="stack_8c_1ace260e73cb048c8c06cf9d63889f5578" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long POP</definition>
+        <argsstring>(STACK *s)</argsstring>
+        <name>POP</name>
+        <param>
+          <type><ref refid="structSTACK" kindref="compound">STACK</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Nuno Costa \brlef Função POP - Função responsável por retirar o elemento que está no topo da stack e decrementar o stack pointer.</para>
+</simplesect>
+<simplesect kind="return"><para>decrementa 1 posição ao apontador e retorna o elemento que está nessa posição </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="stack.c" line="43" column="6" bodyfile="stack.c" bodystart="43" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="stack_8c_1a5c74265888d9b3fe150735121868caa8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PRINT_STACK</definition>
+        <argsstring>(STACK s)</argsstring>
+        <name>PRINT_STACK</name>
+        <param>
+          <type><ref refid="structSTACK" kindref="compound">STACK</ref></type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Nuno Costa \brlef Função PRINT_STACK - Função responsável por imprimir a stack. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="stack.c" line="52" column="6" bodyfile="stack.c" bodystart="52" bodyend="59"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="4"><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="stack_8h" kindref="compound">stack.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><ref refid="structSTACK" kindref="compound">STACK</ref><sp/><ref refid="stack_8c_1ad4ef53e7d74fdb084ff2236e9128b3d5" kindref="member">NEW_STACK</ref>(){</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structSTACK" kindref="compound">STACK</ref><sp/>s;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>s.<ref refid="structSTACK_1a34713f9f94a01dcc0642d0ea0870a335" kindref="member">pos</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>s;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stack_8c_1ac119efd8eee287cd02174dbf417feacd" kindref="member">PUSH</ref>(<ref refid="structSTACK" kindref="compound">STACK</ref><sp/>*s,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>valor){</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>s-&gt;<ref refid="structSTACK_1a9567dadae022bfe7216429f68644de31" kindref="member">array</ref>[s-&gt;<ref refid="structSTACK_1a34713f9f94a01dcc0642d0ea0870a335" kindref="member">pos</ref>]<sp/>=<sp/>valor;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>s-&gt;<ref refid="structSTACK_1a34713f9f94a01dcc0642d0ea0870a335" kindref="member">pos</ref>++;<sp/></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="stack_8c_1ace260e73cb048c8c06cf9d63889f5578" kindref="member">POP</ref>(<ref refid="structSTACK" kindref="compound">STACK</ref><sp/>*s){</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>s-&gt;<ref refid="structSTACK_1a34713f9f94a01dcc0642d0ea0870a335" kindref="member">pos</ref>--;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>s-&gt;<ref refid="structSTACK_1a9567dadae022bfe7216429f68644de31" kindref="member">array</ref>[s-&gt;<ref refid="structSTACK_1a34713f9f94a01dcc0642d0ea0870a335" kindref="member">pos</ref>];</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stack_8c_1a5c74265888d9b3fe150735121868caa8" kindref="member">PRINT_STACK</ref><sp/>(<ref refid="structSTACK" kindref="compound">STACK</ref><sp/>s){</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=0;<sp/>i&lt;s.<ref refid="structSTACK_1a34713f9f94a01dcc0642d0ea0870a335" kindref="member">pos</ref>;<sp/>i++){</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%ld&quot;</highlight><highlight class="normal">,<sp/>s.<ref refid="structSTACK_1a9567dadae022bfe7216429f68644de31" kindref="member">array</ref>[i]);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>putchar(</highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="stack.c"/>
+  </compounddef>
+</doxygen>

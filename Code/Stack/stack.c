@@ -9,7 +9,7 @@
 
 /**
 * \author Simão Quintela 
-* \brlef NEW_STACK - Função responsável por criar e inicializar a stack.
+* \brief NEW_STACK - Função responsável por criar e inicializar a stack.
 *
 * @returns Retorna a Stack.
 */
@@ -24,7 +24,7 @@ STACK NEW_STACK(){
 
 /** 
 * \author Simão Quintela 
-* \brlef Função PUSH - Função responsável por acrescentar elementos à stack e incrementar o stack pointer.
+* \brief Função PUSH - Função responsável por acrescentar elementos à stack e incrementar o stack pointer.
 * @param valor - valor a colocar no local para onde o apontador está a apontar antes do incremento.
 */
 void PUSH(STACK *s, int valor){
@@ -33,10 +33,9 @@ void PUSH(STACK *s, int valor){
     s->pos++; 
 }
 
-
 /**
 * \author Nuno Costa
-* \brlef Função POP - Função responsável por retirar o elemento que está no topo da stack e decrementar o stack pointer.
+* \brief Função POP - Função responsável por retirar o elemento que está no topo da stack e decrementar o stack pointer.
 *
 * @returns decrementa 1 posição ao apontador e retorna o elemento que está nessa posição
 */
@@ -47,7 +46,7 @@ long POP(STACK *s){
 
 /**
 * \author Nuno Costa
-* \brlef Função PRINT_STACK - Função responsável por imprimir a stack.
+* \brief Função PRINT_STACK - Função responsável por imprimir a stack.
 */
 void PRINT_STACK (STACK s){
 	long i;

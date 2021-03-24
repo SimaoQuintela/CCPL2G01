@@ -12,7 +12,7 @@
 
 /**
 * \author Hugo Rocha
-* \brlef Função soma - Função responsável por fazer a soma.
+* \brief Função soma - Função responsável por fazer a soma.
 */
 void soma(STACK *s){
     long X = POP(s);

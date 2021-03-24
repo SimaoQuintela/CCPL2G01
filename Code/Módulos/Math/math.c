@@ -23,7 +23,7 @@ void soma(STACK *s){
 
 /**
 * \author Hugo Rocha
-* \brlef Função subtrai - Função responsável por fazer a subtração entre dois números.
+* \brief Função subtrai - Função responsável por fazer a subtração entre dois números.
 */
 void subtrai(STACK *s){
     long X = POP(s);
@@ -34,7 +34,7 @@ void subtrai(STACK *s){
 
 /**
 * \author Hugo Rocha
-* \brlef Função multiplica - Função responsável por fazer a multiplicação entre dois números.
+* \brief Função multiplica - Função responsável por fazer a multiplicação entre dois números.
 */
 void multiplica(STACK *s){
     long X = POP(s);
@@ -45,7 +45,7 @@ void multiplica(STACK *s){
 
 /**
 * \author Hugo Rocha
-* \brlef Função dividir - Função responsável por fazer a divisão inteira entre dois números, garantindo que X é diferente de zero.
+* \brief Função dividir - Função responsável por fazer a divisão inteira entre dois números, garantindo que X é diferente de zero.
 */
 void dividir(STACK *s){
     long X = POP(s);
@@ -57,7 +57,7 @@ void dividir(STACK *s){
 
 /**
 * \author Hugo Rocha
-* \brlef Função decrementa - Função responsável por fazer a decrementação.
+* \brief Função decrementa - Função responsável por fazer a decrementação.
 */
 void decrementa(STACK *s){
     long X = POP(s);
@@ -67,7 +67,7 @@ void decrementa(STACK *s){
 
 /**
 * \author Hugo Rocha
-* \brlef Função incrementa - Função responsável por fazer a incrementação.
+* \brief Função incrementa - Função responsável por fazer a incrementação.
 */
 void incrementa(STACK *s){
     long X = POP(s);
@@ -77,7 +77,7 @@ void incrementa(STACK *s){
 
 /**
 * \author Tiago Guedes
-* \brlef Função modulo - Função responsável por devolver o resto da divisão inteira entre dois números.
+* \brief Função modulo - Função responsável por devolver o resto da divisão inteira entre dois números.
 */
 void modulo(STACK *s){
    long X = POP(s);
@@ -88,7 +88,7 @@ void modulo(STACK *s){
 
 /**
 * \author Tiago Guedes
-* \brlef Função expoente - Função responsável por fazer a exponencialização entre dois números sendo o primeiro a base e o segundo o expoente.
+* \brief Função expoente - Função responsável por fazer a exponencialização entre dois números sendo o primeiro a base e o segundo o expoente.
 */
 void expoente(STACK *s){
     long X = POP(s);
@@ -99,7 +99,7 @@ void expoente(STACK *s){
 
 /**
 * \author Tiago Guedes
-* \brlef Função e - Função responsável por determinar a interseção de bits entre dois números.
+* \brief Função e - Função responsável por determinar a interseção de bits entre dois números.
 */
 void e(STACK *s){
     long X = POP(s);
@@ -110,7 +110,7 @@ void e(STACK *s){
 
 /**
 * \author Tiago Guedes
-* \brlef Função ou - Função responsável por determinar a reunião de bits entre dois números.
+* \brief Função ou - Função responsável por determinar a reunião de bits entre dois números.
 */
 void ou(STACK *s){
     long X = POP(s);
@@ -122,7 +122,7 @@ void ou(STACK *s){
 
 /**
 * \author Tiago Guedes
-* \brlef Função xorr - Função responsável por colocar a 0 todos os bits em comum e a 1 todos os bits diferentes entre si, de dois números.
+* \brief Função xorr - Função responsável por colocar a 0 todos os bits em comum e a 1 todos os bits diferentes entre si, de dois números.
 */
 void xorr(STACK *s){
     long X = POP(s);
@@ -133,7 +133,7 @@ void xorr(STACK *s){
 
 /**
 * \author Tiago Guedes
-* \brlef Função nott - Função responsável por inverter todos os bits de um número.
+* \brief Função nott - Função responsável por inverter todos os bits de um número.
 */
 void nott(STACK *s){
     long X = POP(s);

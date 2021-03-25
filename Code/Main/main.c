@@ -5,7 +5,7 @@
 #include "parser.h"
 
 /**
-* \brlef Função principal do programa.
+* \brief Função principal do programa.
 * 
 * @param BUFSIZ Macro pré-definida que dá o tamanho da linha lida.
 *

@@ -11,7 +11,7 @@
 #include "maths.h"
 
 /**
-* \brlef Função parse - Função responsável por fazer o parse de uma linha.
+* \brief Função parse - Função responsável por fazer o parse de uma linha.
 *
 * @param strtok - O strtok vai percorrer a linha e separar em tokens sempre que encontra um delimitador.
 * @param sobra - Se um token for um número inteiro a sobra é 0 logo, faz push desse valor, senão é um sinal e aplica a função correspondente.

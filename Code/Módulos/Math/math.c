@@ -299,7 +299,7 @@ void decrementa(STACK *s){
     } else if(has_type(top(s), CHAR)){
         char x = pop_CHAR(s);       // x char
 
-        push_LONG(s, x - 1);
+        push_CHAR(s, x - 1);
     }
   
 }
@@ -317,7 +317,7 @@ void incrementa(STACK *s){
     } else if(has_type(top(s), CHAR)){
         char x = pop_CHAR(s);       // x char
 
-        push_LONG(s, x + 1);
+        push_CHAR(s, x + 1);
     }
   
 }
@@ -377,49 +377,49 @@ void expoente(STACK *s){
         long x = pop_LONG(s);       // x long
         double y = pop_DOUBLE(s);   // y double
 
-        double result = pow((double)x,y);  
+        double result = pow(y,(double)x);  
         push_DOUBLE(s, result);
 
     } else if(has_type(top(s), DOUBLE) && has_type(penultimo(s), LONG)){
         double x = pop_DOUBLE(s);   // x double
         long y =  pop_LONG(s);      // y long
 
-        double result = pow(x,(double)y);
+        double result = pow((double)y,x);
         push_DOUBLE(s, result);
 
     } else if(has_type(top(s), CHAR) && has_type(penultimo(s), CHAR)){
         char x = pop_CHAR(s);       // x char
         char y = pop_CHAR(s);       // y char
 
-        long result = pow((long)x,(long)y);
+        long result = pow((long)y,(long)x);
         push_LONG(s, result);
 
     } else if(has_type(top(s), CHAR) && has_type(penultimo(s), LONG)){
         char x = pop_CHAR(s);       // x char
         long y = pop_LONG(s);       // y long 
 
-        long result = pow((long)x,y);
+        long result = pow(y,(long)x);
         push_LONG(s, result);
 
     } else if(has_type(top(s), LONG) && has_type(penultimo(s), CHAR)){
         long x = pop_LONG(s);       // x long
         char y = pop_CHAR(s);       // y char
 
-        long result = pow(x,(long)y);
+        long result = pow((long)y,x);
         push_LONG(s, result);
 
     } else if(has_type(top(s), CHAR) && has_type(penultimo(s), DOUBLE)){
         char x = pop_CHAR(s);       // x char 
         double y = pop_DOUBLE(s);   // y double
 
-        double result = pow((double)x,y);
+        double result = pow(y,(double)x);
         push_DOUBLE(s, result);
 
     } else if(has_type(top(s), DOUBLE) && has_type(penultimo(s), CHAR)){
         double x = pop_DOUBLE(s);   // x double 
         char y = pop_CHAR(s);       // y char
 
-        double result = pow(x,(double)y);
+        double result = pow((double)y,x);
         push_DOUBLE(s, result);
     }
 }

@@ -14,7 +14,7 @@ void parse(STACK *s, char *line) {
   char *delims = " \t\n";
   char *token;
 
-  for(token = strtok(line, delims); token != NULL; token = strtok(NULL, delims)) {
+  for(token = strtok_r(line, delims, &line); token != NULL; token = strtok_r(NULL, delims, &line)) {
       tokenizador(s, token);  
   }
 
@@ -26,7 +26,7 @@ void parse2(STACK *s, char *line) {
   char *delims = " \t\n";
   char *token;
 
-  for(token = strtok(line, delims); token != NULL; token = strtok(NULL, delims)) {
+  for(token = strtok(line, delims, &line); token != NULL; token = strtok(NULL, delims, &line)) {
       tokenizador(s, token);  
   }
 }

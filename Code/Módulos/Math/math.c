@@ -286,87 +286,247 @@ void dividir(STACK *s){
 }
 
 
-/**
-* \author Hugo Rocha
-* \brief Função decrementa - Função responsável por fazer a decrementação.
-*/
+// incremento
 void decrementa(STACK *s){
-    long X = POP(s);
-    PUSH(s, X - 1);
+ if(has_type(top(s), LONG)){
+        long x = pop_LONG(s);       // x long
+        push_LONG(s, x - 1);
+
+    } else if(has_type(top(s), DOUBLE)){
+        double x = pop_DOUBLE(s);   // x double
+        push_DOUBLE(s, x - 1);
+
+    } else if(has_type(top(s), CHAR)){
+        char x = pop_CHAR(s);       // x char
+
+        push_LONG(s, x - 1);
+    }
+  
 }
 
-
-/**
-* \author Hugo Rocha
-* \brief Função incrementa - Função responsável por fazer a incrementação.
-*/
+// decremento
 void incrementa(STACK *s){
-    long X = POP(s);
-    PUSH(s, X + 1);
+  if(has_type(top(s), LONG)){
+        long x = pop_LONG(s);       // x long
+        push_LONG(s, x + 1);
+
+    } else if(has_type(top(s), DOUBLE)){
+        double x = pop_DOUBLE(s);   // x double
+        push_DOUBLE(s, x + 1);
+
+    } else if(has_type(top(s), CHAR)){
+        char x = pop_CHAR(s);       // x char
+
+        push_LONG(s, x + 1);
+    }
+  
 }
 
 
-/**
-* \author Tiago Guedes
-* \brief Função modulo - Função responsável por devolver o resto da divisão inteira entre dois números.
-*/
+
+//modulo
 void modulo(STACK *s){
-   long X = POP(s);
-   long Y = POP(s);
-   PUSH(s, Y % X);
+    if(has_type(top(s), LONG) && has_type(penultimo(s), LONG)){
+        long x = pop_LONG(s);       // x long
+        long y = pop_LONG(s);       // y long
+        assert(x != 0);
+
+        push_LONG(s, y%x);
+    } else if(has_type(top(s), CHAR) && has_type(penultimo(s), CHAR)){
+        char x = pop_CHAR(s);       // x char
+        char y = pop_CHAR(s);       // y char
+        assert(x != 0);
+
+        long result =  (long)y % (long)x;
+        push_LONG(s, result);
+
+    } else if(has_type(top(s), CHAR) && has_type(penultimo(s), LONG)){
+        char x = pop_CHAR(s);       // x char
+        long y = pop_LONG(s);       // y long 
+        assert(x != 0);
+
+        long result = y % (long)x;
+        push_LONG(s, result);
+
+    } else if(has_type(top(s), LONG) && has_type(penultimo(s), CHAR)){
+        long x = pop_LONG(s);       // x long
+        char y = pop_CHAR(s);       // y char
+        assert(x != 0);
+
+        long result = (long)y % x;
+        push_LONG(s, result);
+    }
 }
 
 
-/**
-* \author Tiago Guedes
-* \brief Função expoente - Função responsável por fazer a exponencialização entre dois números sendo o primeiro a base e o segundo o expoente.
-*/
+// exponenciação
 void expoente(STACK *s){
-    long X = POP(s);
-    long Y = POP(s);
-    PUSH(s, pow(Y, X));
+    if(has_type(top(s), LONG) && has_type(penultimo(s), LONG)){
+        long x = pop_LONG(s);       // x long
+        long y = pop_LONG(s);       // y long
+
+        push_LONG(s, pow(y,x));
+
+    } else if(has_type(top(s), DOUBLE) && has_type(penultimo(s), DOUBLE)){
+        double x = pop_DOUBLE(s);   // x double
+        double y = pop_DOUBLE(s);   // y double
+
+        push_DOUBLE(s, pow(y,x));
+
+    } else if(has_type(top(s), LONG) && has_type(penultimo(s), DOUBLE)){
+        long x = pop_LONG(s);       // x long
+        double y = pop_DOUBLE(s);   // y double
+
+        double result = pow((double)x,y);  
+        push_DOUBLE(s, result);
+
+    } else if(has_type(top(s), DOUBLE) && has_type(penultimo(s), LONG)){
+        double x = pop_DOUBLE(s);   // x double
+        long y =  pop_LONG(s);      // y long
+
+        double result = pow(x,(double)y);
+        push_DOUBLE(s, result);
+
+    } else if(has_type(top(s), CHAR) && has_type(penultimo(s), CHAR)){
+        char x = pop_CHAR(s);       // x char
+        char y = pop_CHAR(s);       // y char
+
+        long result = pow((long)x,(long)y);
+        push_LONG(s, result);
+
+    } else if(has_type(top(s), CHAR) && has_type(penultimo(s), LONG)){
+        char x = pop_CHAR(s);       // x char
+        long y = pop_LONG(s);       // y long 
+
+        long result = pow((long)x,y);
+        push_LONG(s, result);
+
+    } else if(has_type(top(s), LONG) && has_type(penultimo(s), CHAR)){
+        long x = pop_LONG(s);       // x long
+        char y = pop_CHAR(s);       // y char
+
+        long result = pow(x,(long)y);
+        push_LONG(s, result);
+
+    } else if(has_type(top(s), CHAR) && has_type(penultimo(s), DOUBLE)){
+        char x = pop_CHAR(s);       // x char 
+        double y = pop_DOUBLE(s);   // y double
+
+        double result = pow((double)x,y);
+        push_DOUBLE(s, result);
+
+    } else if(has_type(top(s), DOUBLE) && has_type(penultimo(s), CHAR)){
+        double x = pop_DOUBLE(s);   // x double 
+        char y = pop_CHAR(s);       // y char
+
+        double result = pow(x,(double)y);
+        push_DOUBLE(s, result);
+    }
 }
 
 
-/**
-* \author Tiago Guedes
-* \brief Função e - Função responsável por determinar a interseção de bits entre dois números.
-*/
+// função e 
 void e(STACK *s){
-    long X = POP(s);
-    long Y = POP(s);
-    PUSH(s, Y & X);
+ if(has_type(top(s), LONG) && has_type(penultimo(s), LONG)){
+        long x = pop_LONG(s);       // x long
+        long y = pop_LONG(s);       // y long
+
+        push_LONG(s, y & x);
+
+    } else if(has_type(top(s), CHAR) && has_type(penultimo(s), CHAR)){
+        char x = pop_CHAR(s);       // x char
+        char y = pop_CHAR(s);       // y char
+
+        long result = (long)y & (long)x;
+        push_LONG(s, result);
+
+    } else if(has_type(top(s), CHAR) && has_type(penultimo(s), LONG)){
+        char x = pop_CHAR(s);       // x char
+        long y = pop_LONG(s);       // y long
+
+        long result = (long)y & x;
+        push_LONG(s, result);
+
+    } else if(has_type(top(s), LONG) && has_type(penultimo(s), CHAR)){
+        long x = pop_LONG(s);       // x long
+        char y = pop_CHAR(s);       // y char
+
+        long result = y & (long)x;
+        push_LONG(s, result);
+    }
 }
 
-
-/**
-* \author Tiago Guedes
-* \brief Função ou - Função responsável por determinar a reunião de bits entre dois números.
-*/
+// função ou
 void ou(STACK *s){
-    long X = POP(s);
-    long Y = POP(s);
-    PUSH(s, Y | X);
+ if(has_type(top(s), LONG) && has_type(penultimo(s), LONG)){
+        long x = pop_LONG(s);       // x long
+        long y = pop_LONG(s);       // y long
+
+        push_LONG(s, y | x);
+
+    } else if(has_type(top(s), CHAR) && has_type(penultimo(s), CHAR)){
+        char x = pop_CHAR(s);       // x char
+        char y = pop_CHAR(s);       // y char
+
+        long result = (long)y | (long)x;
+        push_LONG(s, result);
+
+    } else if(has_type(top(s), CHAR) && has_type(penultimo(s), LONG)){
+        char x = pop_CHAR(s);       // x char
+        long y = pop_LONG(s);       // y long
+
+        long result = (long)y | x;
+        push_LONG(s, result);
+
+    } else if(has_type(top(s), LONG) && has_type(penultimo(s), CHAR)){
+        long x = pop_LONG(s);       // x long
+        char y = pop_CHAR(s);       // y char
+
+        long result = y | (long)x;
+        push_LONG(s, result);
+    }
 }
 
 
-
-/**
-* \author Tiago Guedes
-* \brief Função xorr - Função responsável por colocar a 0 todos os bits em comum e a 1 todos os bits diferentes entre si, de dois números.
-*/
 void xorr(STACK *s){
-    long X = POP(s);
-    long Y = POP(s);
-    PUSH(s, Y ^ X);
+ if(has_type(top(s), LONG) && has_type(penultimo(s), LONG)){
+        long x = pop_LONG(s);       // x long
+        long y = pop_LONG(s);       // y long
+
+        push_LONG(s, y ^ x);
+    } else if(has_type(top(s), CHAR) && has_type(penultimo(s), CHAR)){
+        char x = pop_CHAR(s);       // x char
+        char y = pop_CHAR(s);       // y char
+
+        long result = (long)y ^ (long)x;
+        push_LONG(s, result);
+
+    } else if(has_type(top(s), CHAR) && has_type(penultimo(s), LONG)){
+        char x = pop_CHAR(s);       // x char
+        long y = pop_LONG(s);       // y long
+
+        long result = (long)y ^ x;
+        push_LONG(s, result);
+
+    } else if(has_type(top(s), LONG) && has_type(penultimo(s), CHAR)){
+        long x = pop_LONG(s);       // x long
+        char y = pop_CHAR(s);       // y char
+
+        long result = y ^ (long)x;
+        push_LONG(s, result);
+    }
 }
 
-
-/**
-* \author Tiago Guedes
-* \brief Função nott - Função responsável por inverter todos os bits de um número.
-*/
 void nott(STACK *s){
-    long X = POP(s);
-    PUSH(s, (~X));
+  if(has_type(top(s), LONG)){
+        long x = pop_LONG(s);       // x long
+        push_LONG(s, ~x);
+
+    } else if(has_type(top(s), CHAR)){
+        char x = pop_CHAR(s);       // x char
+        long y = (long)x;
+
+        push_LONG(s, ~y);
+    }
+
 }

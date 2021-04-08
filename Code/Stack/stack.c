@@ -1,58 +1,81 @@
-/**
-* @file Ficheiro que contem as funções relacionadas com a Stack.
-*/
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+
 #include "stack.h"
 
+int has_type(DATA elem, int mask){
+	return (elem.type & mask) != 0;
+}
 
-/**
-* \author Simão Quintela 
-* \brief NEW_STACK - Função responsável por criar e inicializar a stack.
-*
-* @returns Retorna a Stack.
-*/
-STACK NEW_STACK(){
-	STACK s;
-
-	s.pos = 0;
-
+STACK *new_stack(){
+	STACK *s = (STACK *) calloc(1, sizeof(STACK));
+	s->size = 100;
+	s->stack = (DATA *) calloc(s->size, sizeof(DATA));
 	return s;
 }
 
-
-/** 
-* \author Simão Quintela 
-* \brief Função PUSH - Função responsável por acrescentar elementos à stack e incrementar o stack pointer.
-* @param valor - valor a colocar no local para onde o apontador está a apontar antes do incremento.
-*/
-void PUSH(STACK *s, int valor){
-
-	s->array[s->pos] = valor;
-    s->pos++; 
-}
-
-/**
-* \author Nuno Costa
-* \brief Função POP - Função responsável por retirar o elemento que está no topo da stack e decrementar o stack pointer.
-*
-* @returns decrementa 1 posição ao apontador e retorna o elemento que está nessa posição
-*/
-long POP(STACK *s){
-	s->pos--;
-	return s->array[s->pos];
-}
-
-/**
-* \author Nuno Costa
-* \brief Função PRINT_STACK - Função responsável por imprimir a stack.
-*/
-void PRINT_STACK (STACK s){
-	long i;
-
-	for(i=0; i<s.pos; i++){
-		printf("%ld", s.array[i]);
+void push(STACK *s, DATA elem){
+	if(s->size == s->n_elems){
+		s->size += 100;
+		s->stack = (DATA *) realloc(s->stack, s->size * sizeof(DATA));
 	}
-	putchar('\n');
+	s->stack[s->n_elems] = elem;
+	s->n_elems++;
 }
+
+DATA pop(STACK *s){
+	s->n_elems--;
+	return s->stack[s->n_elems];
+}
+
+DATA top(STACK *s){
+	return s->stack[s->n_elems -1];
+}
+DATA penultimo(STACK *s){
+	return s->stack[s->n_elems -2];
+}
+
+int is_empty(STACK *s){
+	return s->n_elems = 0;
+}
+
+DATA enesimo(STACK *s, int n){
+    return s->stack[s->n_elems - n - 1];
+}
+
+void print_stack(STACK *s){
+	for(int i = 0; i <s->n_elems; i++){
+		DATA elem = s->stack[i];
+		TYPE type = elem.type;
+		switch(type){
+			case LONG: printf("%ld", elem.LONG);
+				break;
+			case DOUBLE: printf("%g", elem.DOUBLE);
+				break;
+			case CHAR: printf("%c", elem.CHAR);
+				break;
+			case STRING: printf("%s", elem.STRING);
+				break;
+		}
+	}
+	printf("\n");
+}
+
+#define STACK_OPERATION(_type, _name)			\
+	void push_##_name(STACK *s, _type val){ 	\
+		DATA elem;								\
+		elem.type = _name;						\
+		elem._name = val;						\
+		push(s, elem);							\
+	}											\
+	_type pop_##_name(STACK *s){				\
+		DATA elem = pop(s); 					\
+		assert(elem.type == _name);				\
+		return elem._name;						\
+	}
+
+
+STACK_OPERATION(long, LONG)
+STACK_OPERATION(double, DOUBLE)
+STACK_OPERATION(char, CHAR)
+STACK_OPERATION(char *, STRING)

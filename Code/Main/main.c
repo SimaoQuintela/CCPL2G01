@@ -1,18 +1,11 @@
-/**
-* @file Ficheiro que contém a função main do programa.
-*/
 #include <stdio.h>
 #include "parser.h"
+#include "stack.h"
 
-/**
-* \brief Função principal do programa.
-* 
-* @param BUFSIZ Macro pré-definida que dá o tamanho da linha lida.
-*
-* @returns Retorna 0 se tudo correr bem.
-*/
 int main() {
   char buf[BUFSIZ];
-  parse(fgets(buf, BUFSIZ, stdin));
+  STACK *s = new_stack();
+  
+  parse(s, fgets(buf, BUFSIZ, stdin));
   return 0;
 }

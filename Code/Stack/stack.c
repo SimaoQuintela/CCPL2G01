@@ -63,15 +63,15 @@ void print_stack(STACK *s){
 
 #define STACK_OPERATION(_type, _name)			\
 	void push_##_name(STACK *s, _type val){ 	\
-		DATA elem;								\
-		elem.type = _name;						\
-		elem._name = val;						\
-		push(s, elem);							\
-	}											\
-	_type pop_##_name(STACK *s){				\
-		DATA elem = pop(s); 					\
-		assert(elem.type == _name);				\
-		return elem._name;						\
+		DATA elem;				\
+		elem.type = _name;			\
+		elem._name = val;			\
+		push(s, elem);				\
+	}						\
+	_type pop_##_name(STACK *s){			\
+		DATA elem = pop(s); 			\
+		assert(elem.type == _name);		\
+		return elem._name;			\
 	}
 
 

@@ -11,7 +11,10 @@
 #include "stack.h"
 
 
-// Função soma
+/**
+* \author Nuno Costa
+* \brief Função soma(+) para cada tipo, exceto strings.
+*/ 
 void soma(STACK *s){
     // X argument 
     if(has_type(top(s), LONG) && has_type(penultimo(s), LONG)){
@@ -324,7 +327,10 @@ void incrementa(STACK *s){
 
 
 
-//modulo
+/**
+* \author Nuno Costa
+* \brief Função módulo(%) para cada tipo, exceto strings e doubles.
+*/ 
 void modulo(STACK *s){
     if(has_type(top(s), LONG) && has_type(penultimo(s), LONG)){
         long x = pop_LONG(s);       // x long

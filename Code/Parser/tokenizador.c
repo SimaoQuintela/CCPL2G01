@@ -91,6 +91,11 @@ void tokenizador(STACK *s, char* token){
       		ler_linha(s);
 }
 
+/**
+* \author Simão Quintela
+* \brief A função verifica_carater recebe como parametro um token(carater) e precorre uma string que contém todos os carateres associados às operações aritméticas e de conversão
+* @returns Caso o carater seja igual a qualquer um dos tokens contidos na string, a função retorna 0(falso), senão retorna 1(verdadeiro);
+*/
 int verifica_carater(char carater){
   char string_de_carateres [23] = "+-*/()%#&|^~@_;$\\lfic";
   int resultado = 1;

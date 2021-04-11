@@ -1,3 +1,6 @@
+/** 
+* @file tokenizador Módulo responsável por interpretar os tokens.
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -7,6 +10,16 @@
 #include "maths.h"
 #include "manipulacao_da_stack.h"
 
+
+/**
+* \author Simão Quintela
+* \author Hugo Rocha
+* \author Nuno Costa
+* \author Tiago Guedes
+* \brief O tokenizador recebe a stack e um token passados como parâmetros do parser e lê condição a condição até encontrar o seu token correspondente.
+* @param strtol Função pré-definida(stdlib.h) que é responsável por converter uma string para long caso a sobra do token seja 0, ou seja, caso o token seja um inteiro.
+* @param strtod Função pré-definida(stdlib.h) que é responsável por converter uma string para double caso a sobra do token seja 0, ou seja, caso o token seja um double.
+*/
 void tokenizador(STACK *s, char* token){
     char *sobra1;
     char *sobra2;

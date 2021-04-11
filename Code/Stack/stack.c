@@ -1,12 +1,28 @@
+/**	@file stack Módulo que contém a stack e todas as operações adjacentes
+* \author Simão Quintela
+* \author Hugo Rocha
+* \author Tiago Guedes
+* \author Paulo Vasconcelos
+* \author Nuno Costa
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
-
 #include "stack.h"
 
+/**
+* \brief Função que verifica o tipo de um token.
+* @returns Retorna verdadeiro se o elemento e a máscara tiverem o mesmo tipo, senão retorna falso
+*/
 int has_type(DATA elem, int mask){
 	return (elem.type & mask) != 0;
 }
 
+/**
+* \brief Função responsável pela criação da stack
+* @param calloc Função pré-definida (stdlib.h) que aloca o espaço que o utilizador insere e retorna um apontador para o início da memória alocada
+* @returns Retorna uma stack.
+*/
 STACK *new_stack(){
 	STACK *s = (STACK *) calloc(1, sizeof(STACK));
 	s->size = 100;

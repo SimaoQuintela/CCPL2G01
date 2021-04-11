@@ -14,82 +14,68 @@ void tokenizador(STACK *s, char* token){
 
     long val_l = strtol(token, &sobra1, 10);
     double val_d = strtod(token, &sobra2);    
-
-    	if(strlen(sobra1) == 0)
-    		push_LONG(s, val_l);
+	
+    if(strlen(sobra1) == 0)
+        push_LONG(s, val_l);
        
-    	else if(strlen(sobra2) == 0)
-        	push_DOUBLE(s, val_d);
+    else if(strlen(sobra2) == 0)
+        push_DOUBLE(s, val_d);
         
-    	else if(strlen(token) != 1)
-        	push_STRING(s, token);
+    else if(strlen(token) != 1)
+        push_STRING(s, token);
 
-    	else if(verifica_carater(carater) == 1)
-        	push_CHAR(s, carater); 
+    else if(verifica_carater(carater) == 1)
+        push_CHAR(s, carater); 
 
-    	else if (strcmp(token, "+") == 0)	// função soma
-        	soma(s);
 
-    	else if (strcmp(token, "-") == 0)   // função subtração
-        	subtrai(s);
-
-    	else if (strcmp(token, "*") == 0)	// função multiplicação
-        	multiplica(s);
-
-        else if (strcmp(token, "/") == 0)	// função divisão
-   		dividir(s);
-
-   	else if (strcmp(token, "(") == 0)	// decremento
-   		decrementa(s);
-
-   	else if (strcmp(token, ")") == 0)	// incremento
-   		incrementa(s);
-
-   	else if (strcmp(token, "%") == 0)	// função módulo
-   		modulo(s);
-
-   	else if (strcmp(token, "#") == 0)	// função expoente
-   		expoente(s);
-
-   	else if (strcmp(token, "&") == 0)
-   		e(s);							// função que conta quantos bits 2 numeros têm em comum
-
-   	else if (strcmp(token, "|") == 0)	// função que dados dois numeros faz a reuniao da quantidade de bits a 1 
-   		ou(s);							
-
-   	else if (strcmp(token, "^") == 0)	
-   		xorr(s);
-
-   	else if (strcmp(token, "~") == 0)
-   		nott(s);
-      
-   	else if(strcmp(token, "@") == 0)
-      		rodatres(s);
-
-    	else if(strcmp(token, "\\") == 0)
-      		trocadois(s);
-
-    	else if (strcmp(token, "_") == 0)
-      		duplica(s);
-
-    	else if (strcmp(token, ";") == 0)
-      		popp(s);
-
-    	else if(strcmp(token, "$") == 0)
-      		copian(s);
-
-    	else if(strcmp(token, "i") == 0)
-      		converte_para_long(s);
-
-	else if(strcmp(token, "f") == 0)
-      		converte_para_double(s);
-      
-    	else if(strcmp(token, "c") == 0)
-      		converte_para_char(s);
-        
-    	else if(strcmp(token, "l") == 0)
-      		ler_linha(s);
+    if(strcmp(token, "-") == 0)   // sinal -
+    	subtrai(s);
+    else{
+      switch(token[0]){
+        case 43: soma(s);         // sinal + em notação ASCII
+          break;
+        case 42: multiplica(s);   // sinal * em notação ASCII
+          break;
+        case 47: dividir(s);      // sinal / em notação ASCII
+          break;
+        case 40: decrementa(s);   // sinal ( em notação ASCII
+          break;
+        case 41: incrementa(s);   // sinal ) em notação ASCII
+          break;
+        case 37: modulo(s);       // sinal % em notação ASCII
+          break;
+        case 35: expoente(s);     // sinal # em notação ASCII
+          break;
+        case 38: e(s);            // sinal & em notação ASCII
+          break;
+        case 124: ou(s);          // sinal | em notação ASCII
+          break;
+        case 94: xorr(s);         // sinal ^ em notação ASCII
+          break;
+        case 126: nott(s);        // sinal ~ em notação ASCII
+          break;
+        case 64: rodatres(s);     // sinal @ em notação ASCII
+          break; 
+        case 92: trocadois(s);    /* sinal \ em notação ASCII */
+          break;
+        case 95: duplica(s);      // sinal _ em notação ASCII
+          break;
+        case 59: popp(s);         // sinal ; em notação ASCII
+          break;
+        case 36: copian(s);       // sinal $ em notação ASCII
+          break;
+        case 105: converte_para_long(s);    // sinal i em notação ASCII
+          break;
+        case 102: converte_para_double(s);  // sinal f em notação ASCII
+          break;
+        case 99: converte_para_char(s);     // sinal c em notação ASCII
+          break;  
+        case 108: ler_linha(s);             // sinal l em notação ASCII
+          break;
+    }
+  }
 }
+	
 
 /**
 * \author Simão Quintela

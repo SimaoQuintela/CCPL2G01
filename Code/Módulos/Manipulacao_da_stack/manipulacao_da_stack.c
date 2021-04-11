@@ -1,8 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-//#include <string.h>
-//#include <assert.h>
-//#include <math.h>
 #include "stack.h"  
 #include "maths.h"
 #include "parser.h"
@@ -39,6 +36,10 @@ void copian(STACK *s){        // carater $
     push(s, enesimo(s, x));   // enesimo definida na stack
 }
 
+/**
+* \author Simão Quintela
+* \brief converte o elemento que está no topo da stack para um long.
+*/
 void converte_para_long(STACK *s){
     if(has_type(top(s), DOUBLE)){
         double x = pop_DOUBLE(s);
@@ -51,6 +52,10 @@ void converte_para_long(STACK *s){
     }
 }
 
+/**
+* \author Simão Quintela
+* \brief converte o elemento que está no topo da stack para um double.
+*/
 void converte_para_double(STACK *s){
     if(has_type(top(s), LONG)){
         long x = pop_LONG(s);
@@ -63,6 +68,10 @@ void converte_para_double(STACK *s){
     }
 }
 
+/**
+* \author Simão Quintela
+* \brief converte o elemento que está no topo da stack para um char.
+*/
 void converte_para_char(STACK *s){
     if(has_type(top(s), LONG)){
         long x = pop_LONG(s);
@@ -75,6 +84,10 @@ void converte_para_char(STACK *s){
     }
 }
 
+/**
+* \author Simão Quintela
+* \brief lê uma nova linha e envia-a para o parse2 onde vai ser enviada para o tokenizador para ser interpretada sendo que no fim da sua interpretação não é imprimida.
+*/
 void ler_linha(STACK *s){
     char linha[BUFSIZ];
     char *new_line = fgets(linha, BUFSIZ, stdin);

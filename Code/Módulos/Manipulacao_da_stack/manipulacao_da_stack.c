@@ -1,3 +1,6 @@
+/** @file manipulacao_da_stack Módulo que contém as funções responsáveis pela manipulação da stack.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "stack.h"  

@@ -1,0 +1,195 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="parser_8c" kind="file" language="C++">
+    <compoundname>parser.c</compoundname>
+    <includes local="no">string.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes refid="stack_8h" local="yes">stack.h</includes>
+    <includes refid="parser_8h" local="yes">parser.h</includes>
+    <includes refid="maths_8h" local="yes">maths.h</includes>
+    <includes refid="tokenizador_8h" local="yes">tokenizador.h</includes>
+    <includes refid="manipulacao__da__stack_8h" local="yes">manipulacao_da_stack.h</includes>
+    <incdepgraph>
+      <node id="6">
+        <label>assert.h</label>
+      </node>
+      <node id="3">
+        <label>stdlib.h</label>
+      </node>
+      <node id="1">
+        <label>parser.c</label>
+        <link refid="parser_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>parser.h</label>
+        <link refid="parser_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>manipulacao_da_stack.h</label>
+        <link refid="manipulacao__da__stack_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>maths.h</label>
+        <link refid="maths_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>string.h</label>
+      </node>
+      <node id="5">
+        <label>stack.h</label>
+        <link refid="stack_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>tokenizador.h</label>
+        <link refid="tokenizador_8h"/>
+      </node>
+      <node id="4">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="parser_8c_1ac99bd4fc8de6663c68f59305ddb03f77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void parse</definition>
+        <argsstring>(STACK *s, char *line)</argsstring>
+        <name>parse</name>
+        <param>
+          <type><ref refid="stack_8h_1ade8bb1f37e07eb511f3873082665d739" kindref="member">STACK</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>line</declname>
+        </param>
+        <briefdescription>
+<para>A função parse recebe uma stack e uma linha (vindas da main), percorre essa linha separa em token e envia-os um a um para o tokenizador que os vai interpretar. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Saindo do ciclo for, a função print_stack imprime a stack. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>delims</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Servem para delimitar a seleção dos tokens. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strtok_r</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Usado para separar a string em tokens e, com o uso desta &quot;extensão&quot; à função strtok não há problema quanto a chamar mais que uma vez esta função. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="parser.c" line="20" column="6" bodyfile="parser.c" bodystart="20" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="parser_8c_1ac7065d64fdb4df5135f2ae8f41bc886a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void parse2</definition>
+        <argsstring>(STACK *s, char *line)</argsstring>
+        <name>parse2</name>
+        <param>
+          <type><ref refid="stack_8h_1ade8bb1f37e07eb511f3873082665d739" kindref="member">STACK</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>line</declname>
+        </param>
+        <briefdescription>
+<para>A função parse2 está responsável por ler linhas subsequentes à primeira. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>delims</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Servem para delimitar a seleção dos tokens. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strtok_r</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Usado para separar a string em tokens e, com o uso desta &quot;extensão&quot; à função strtok não há problema quanto a chamar mais que uma vez esta função. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="parser.c" line="37" column="6" bodyfile="parser.c" bodystart="37" bodyend="44"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="5"><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="stack_8h" kindref="compound">stack.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="parser_8h" kindref="compound">parser.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="maths_8h" kindref="compound">maths.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="tokenizador_8h" kindref="compound">tokenizador.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="manipulacao__da__stack_8h" kindref="compound">manipulacao_da_stack.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="parser_8c_1ac99bd4fc8de6663c68f59305ddb03f77" kindref="member">parse</ref>(<ref refid="structstack" kindref="compound">STACK</ref><sp/>*s,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*line)<sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*delims<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;<sp/>\t\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*token;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(token<sp/>=<sp/>strtok_r(line,<sp/>delims,<sp/>&amp;line);<sp/>token<sp/>!=<sp/>NULL;<sp/>token<sp/>=<sp/>strtok_r(NULL,<sp/>delims,<sp/>&amp;line))<sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="tokenizador_8c_1aec91f88790c0adf5bc0311775b8302b9" kindref="member">tokenizador</ref>(s,<sp/>token);<sp/><sp/></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><ref refid="stack_8c_1a42b87bab2d601cb02900935c9b80fc23" kindref="member">print_stack</ref>(s);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="parser_8c_1ac7065d64fdb4df5135f2ae8f41bc886a" kindref="member">parse2</ref>(<ref refid="structstack" kindref="compound">STACK</ref><sp/>*s,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*line)<sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*delims<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;<sp/>\t\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*token;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(token<sp/>=<sp/>strtok_r(line,<sp/>delims,<sp/>&amp;line);<sp/>token<sp/>!=<sp/>NULL;<sp/>token<sp/>=<sp/>strtok_r(NULL,<sp/>delims,&amp;line))<sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="tokenizador_8c_1aec91f88790c0adf5bc0311775b8302b9" kindref="member">tokenizador</ref>(s,<sp/>token);<sp/><sp/></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="parser.c"/>
+  </compounddef>
+</doxygen>

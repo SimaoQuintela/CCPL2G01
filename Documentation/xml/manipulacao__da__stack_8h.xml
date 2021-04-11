@@ -1,0 +1,261 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="manipulacao__da__stack_8h" kind="file" language="C++">
+    <compoundname>manipulacao_da_stack.h</compoundname>
+    <includes refid="stack_8h" local="yes">stack.h</includes>
+    <includedby refid="parser_8c" local="yes">parser.c</includedby>
+    <includedby refid="tokenizador_8c" local="yes">tokenizador.c</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>assert.h</label>
+      </node>
+      <node id="1">
+        <label>manipulacao_da_stack.h</label>
+        <link refid="manipulacao__da__stack_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stack.h</label>
+        <link refid="stack_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>parser.c</label>
+        <link refid="parser_8c"/>
+      </node>
+      <node id="1">
+        <label>manipulacao_da_stack.h</label>
+        <link refid="manipulacao__da__stack_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>tokenizador.c</label>
+        <link refid="tokenizador_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="manipulacao__da__stack_8h_1a8d6e47ebf2e0f23fdaa5f791d9ba84da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rodatres</definition>
+        <argsstring>(STACK *s)</argsstring>
+        <name>rodatres</name>
+        <param>
+          <type><ref refid="stack_8h_1ade8bb1f37e07eb511f3873082665d739" kindref="member">STACK</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Roda para a esquerda os três elementos que estão no topo da stack. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Hugo Rocha </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="manipulacao_da_stack.h" line="3" column="6" bodyfile="manipulacao_da_stack.c" bodystart="14" bodyend="21" declfile="manipulacao_da_stack.h" declline="3" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="manipulacao__da__stack_8h_1ad2c846231efe7651bd7edec4f3c7d1f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void trocadois</definition>
+        <argsstring>(STACK *s)</argsstring>
+        <name>trocadois</name>
+        <param>
+          <type><ref refid="stack_8h_1ade8bb1f37e07eb511f3873082665d739" kindref="member">STACK</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>troca os dois elementos que estão no topo da stack. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Hugo Rocha </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="manipulacao_da_stack.h" line="5" column="6" bodyfile="manipulacao_da_stack.c" bodystart="27" bodyend="32" declfile="manipulacao_da_stack.h" declline="5" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="manipulacao__da__stack_8h_1a6fa63cab9d7d96acf78f8dff5d4f782f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void duplica</definition>
+        <argsstring>(STACK *s)</argsstring>
+        <name>duplica</name>
+        <param>
+          <type><ref refid="stack_8h_1ade8bb1f37e07eb511f3873082665d739" kindref="member">STACK</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>duplica o elemento que está no topo da stack. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Hugo Rocha </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="manipulacao_da_stack.h" line="7" column="6" bodyfile="manipulacao_da_stack.c" bodystart="38" bodyend="43" declfile="manipulacao_da_stack.h" declline="7" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="manipulacao__da__stack_8h_1a1dda8549184f82c1edce0e7f2579d94e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void popp</definition>
+        <argsstring>(STACK *s)</argsstring>
+        <name>popp</name>
+        <param>
+          <type><ref refid="stack_8h_1ade8bb1f37e07eb511f3873082665d739" kindref="member">STACK</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>remove o elemento que está no topo da stack. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Hugo Rocha </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="manipulacao_da_stack.h" line="9" column="6" bodyfile="manipulacao_da_stack.c" bodystart="49" bodyend="51" declfile="manipulacao_da_stack.h" declline="9" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="manipulacao__da__stack_8h_1a1bd9ef29df6e07b9c78e372df87d2732" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void copian</definition>
+        <argsstring>(STACK *s)</argsstring>
+        <name>copian</name>
+        <param>
+          <type><ref refid="stack_8h_1ade8bb1f37e07eb511f3873082665d739" kindref="member">STACK</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>copia o N-ésimo elemento para o topo da stack. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Hugo Rocha </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="manipulacao_da_stack.h" line="11" column="6" bodyfile="manipulacao_da_stack.c" bodystart="57" bodyend="60" declfile="manipulacao_da_stack.h" declline="11" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="manipulacao__da__stack_8h_1a19d6a8ccef6b6915205553b4e55c39c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void converte_para_long</definition>
+        <argsstring>(STACK *s)</argsstring>
+        <name>converte_para_long</name>
+        <param>
+          <type><ref refid="stack_8h_1ade8bb1f37e07eb511f3873082665d739" kindref="member">STACK</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>converte o elemento que está no topo da stack para um long. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Simão Quintela </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="manipulacao_da_stack.h" line="13" column="6" bodyfile="manipulacao_da_stack.c" bodystart="66" bodyend="75" declfile="manipulacao_da_stack.h" declline="13" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="manipulacao__da__stack_8h_1ab03f874fda24ded3fc4efe7e63db06ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void converte_para_double</definition>
+        <argsstring>(STACK *s)</argsstring>
+        <name>converte_para_double</name>
+        <param>
+          <type><ref refid="stack_8h_1ade8bb1f37e07eb511f3873082665d739" kindref="member">STACK</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>converte o elemento que está no topo da stack para um double. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Simão Quintela </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="manipulacao_da_stack.h" line="15" column="6" bodyfile="manipulacao_da_stack.c" bodystart="81" bodyend="90" declfile="manipulacao_da_stack.h" declline="15" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="manipulacao__da__stack_8h_1a8e9e35eeb711410f1c0362f29998ba30" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void converte_para_char</definition>
+        <argsstring>(STACK *s)</argsstring>
+        <name>converte_para_char</name>
+        <param>
+          <type><ref refid="stack_8h_1ade8bb1f37e07eb511f3873082665d739" kindref="member">STACK</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>converte o elemento que está no topo da stack para um char. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Simão Quintela </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="manipulacao_da_stack.h" line="17" column="6" bodyfile="manipulacao_da_stack.c" bodystart="96" bodyend="105" declfile="manipulacao_da_stack.h" declline="17" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="manipulacao__da__stack_8h_1ae84570e8afa6c54b124cd5f884f506c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ler_linha</definition>
+        <argsstring>(STACK *s)</argsstring>
+        <name>ler_linha</name>
+        <param>
+          <type><ref refid="stack_8h_1ade8bb1f37e07eb511f3873082665d739" kindref="member">STACK</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>lê uma nova linha e envia-a para o parse2 onde vai ser enviada para o tokenizador para ser interpretada sendo que no fim da sua interpretação não é imprimida. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Simão Quintela </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="manipulacao_da_stack.h" line="19" column="6" bodyfile="manipulacao_da_stack.c" bodystart="111" bodyend="116" declfile="manipulacao_da_stack.h" declline="19" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="stack_8h" kindref="compound">stack.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="manipulacao__da__stack_8h_1a8d6e47ebf2e0f23fdaa5f791d9ba84da" kindref="member">rodatres</ref>(<ref refid="structstack" kindref="compound">STACK</ref><sp/>*s);</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="manipulacao__da__stack_8h_1ad2c846231efe7651bd7edec4f3c7d1f9" kindref="member">trocadois</ref>(<ref refid="structstack" kindref="compound">STACK</ref><sp/>*s);</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="manipulacao__da__stack_8h_1a6fa63cab9d7d96acf78f8dff5d4f782f" kindref="member">duplica</ref>(<ref refid="structstack" kindref="compound">STACK</ref><sp/>*s);</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="manipulacao__da__stack_8h_1a1dda8549184f82c1edce0e7f2579d94e" kindref="member">popp</ref>(<ref refid="structstack" kindref="compound">STACK</ref><sp/>*s);</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="manipulacao__da__stack_8h_1a1bd9ef29df6e07b9c78e372df87d2732" kindref="member">copian</ref>(<ref refid="structstack" kindref="compound">STACK</ref><sp/>*s);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="manipulacao__da__stack_8h_1a19d6a8ccef6b6915205553b4e55c39c9" kindref="member">converte_para_long</ref>(<ref refid="structstack" kindref="compound">STACK</ref><sp/>*s);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="manipulacao__da__stack_8h_1ab03f874fda24ded3fc4efe7e63db06ae" kindref="member">converte_para_double</ref>(<ref refid="structstack" kindref="compound">STACK</ref><sp/>*s);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="manipulacao__da__stack_8h_1a8e9e35eeb711410f1c0362f29998ba30" kindref="member">converte_para_char</ref>(<ref refid="structstack" kindref="compound">STACK</ref><sp/>*s);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="manipulacao__da__stack_8h_1ae84570e8afa6c54b124cd5f884f506c0" kindref="member">ler_linha</ref>(<ref refid="structstack" kindref="compound">STACK</ref><sp/>*s);</highlight></codeline>
+    </programlisting>
+    <location file="manipulacao_da_stack.h"/>
+  </compounddef>
+</doxygen>

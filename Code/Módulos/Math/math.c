@@ -81,9 +81,11 @@ void soma(STACK *s){
 }
 
 
-// função subtração
+/**
+* \author Simão Quintela
+* \brief Função subtração(-) para cada tipo, exceto strings.
+*/ 
 void subtrai(STACK *s){
-
 if(has_type(top(s), LONG) && has_type(penultimo(s), LONG)){
         long x = pop_LONG(s);       // x long
         long y = pop_LONG(s);       // y long
@@ -147,8 +149,10 @@ if(has_type(top(s), LONG) && has_type(penultimo(s), LONG)){
     }
 }
 
-
-// função multiplicação
+/**
+* \author Simão Quintela
+* \brief Função multiplicação(*) para cada tipo, exceto strings.
+*/ 
 void multiplica(STACK *s){
     if(has_type(top(s), LONG) && has_type(penultimo(s), LONG)){
         long x = pop_LONG(s);       // x long

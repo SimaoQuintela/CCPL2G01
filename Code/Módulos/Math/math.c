@@ -359,7 +359,10 @@ void modulo(STACK *s){
 }
 
 
-// exponenciação
+/**
+* \author Tiago Guedes
+* \brief Função expoente(#) para cada tipo, exceto strings.
+*/ 
 void expoente(STACK *s){
     if(has_type(top(s), LONG) && has_type(penultimo(s), LONG)){
         long x = pop_LONG(s);       // x long
@@ -425,7 +428,10 @@ void expoente(STACK *s){
 }
 
 
-// função e 
+/**
+* \author Tiago Guedes
+* \brief Função "e"(&) responsável por determinar a interseção de bits entre dois números inteiros.
+*/ 
 void e(STACK *s){
  if(has_type(top(s), LONG) && has_type(penultimo(s), LONG)){
         long x = pop_LONG(s);       // x long
@@ -456,7 +462,10 @@ void e(STACK *s){
     }
 }
 
-// função ou
+/**
+* \author Tiago Guedes
+* \brief Função "ou"(|) responsável por determinar a reunião de bits entre dois números inteiros.
+*/ 
 void ou(STACK *s){
  if(has_type(top(s), LONG) && has_type(penultimo(s), LONG)){
         long x = pop_LONG(s);       // x long

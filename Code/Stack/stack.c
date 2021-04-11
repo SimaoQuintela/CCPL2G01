@@ -59,17 +59,31 @@ DATA pop(STACK *s){
 DATA top(STACK *s){
 	return s->stack[s->n_elems -1];
 }
+
+/**
+* \brief Função responsável por retornar o que está na posição anterior ao topo da stack.
+* @returns Retorna o que está na posição anterior ao topo da stack.
+*/
 DATA penultimo(STACK *s){
 	return s->stack[s->n_elems -2];
 }
 
+/**
+* \brief Função que diz se a stack está vazia.
+* @returns Se a stack tiver vazia retorna 1 senão retorna.
+*/
 int is_empty(STACK *s){
 	return s->n_elems = 0;
 }
 
+/**
+* \brief Função responsável por retornar o N-ésimo elemento a partir do topo da stack.
+* @returns Retorna o N-ésimo elemento a partir do topo da stack.
+*/
 DATA enesimo(STACK *s, int n){
     return s->stack[s->n_elems - n - 1];
 }
+
 
 void print_stack(STACK *s){
 	for(int i = 0; i <s->n_elems; i++){

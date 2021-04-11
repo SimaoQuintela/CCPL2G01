@@ -218,7 +218,10 @@ void multiplica(STACK *s){
 }
 
 
-// função divisão
+/**
+* \author Hugo Rocha
+* \brief Função divisão(/) para cada tipo, exceto strings.
+*/ 
 void dividir(STACK *s){
  if(has_type(top(s), LONG) && has_type(penultimo(s), LONG)){
         long x = pop_LONG(s);       // x long
@@ -293,7 +296,10 @@ void dividir(STACK *s){
 }
 
 
-// incremento
+/**
+* \author Hugo Rocha
+* \brief Função responsável por decrementar(() 1 unidade para cada tipo, exceto strings.
+*/ 
 void decrementa(STACK *s){
  if(has_type(top(s), LONG)){
         long x = pop_LONG(s);       // x long
@@ -306,12 +312,15 @@ void decrementa(STACK *s){
     } else if(has_type(top(s), CHAR)){
         char x = pop_CHAR(s);       // x char
 
-        push_CHAR(s, x - 1);
+        push_CHAR(s, x-1);
     }
   
 }
 
-// decremento
+/**
+* \author Hugo Rocha
+* \brief Função responsável por incrementar()) 1 unidade para cada tipo, exceto strings.
+*/ 
 void incrementa(STACK *s){
   if(has_type(top(s), LONG)){
         long x = pop_LONG(s);       // x long

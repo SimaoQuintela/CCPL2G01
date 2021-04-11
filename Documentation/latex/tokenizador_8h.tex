@@ -1,0 +1,56 @@
+\hypertarget{tokenizador_8h}{}\doxysection{tokenizador.\+h File Reference}
+\label{tokenizador_8h}\index{tokenizador.h@{tokenizador.h}}
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{tokenizador_8h_aec91f88790c0adf5bc0311775b8302b9}{tokenizador}} (\mbox{\hyperlink{stack_8h_ade8bb1f37e07eb511f3873082665d739}{S\+T\+A\+CK}} $\ast$s, char $\ast$token)
+\begin{DoxyCompactList}\small\item\em O tokenizador recebe a stack e um token passados como parâmetros do parser e lê condição a condição até encontrar o seu token correspondente. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{tokenizador_8h_a9d26424e8dc37c9b0734796c82cbffb7}{verifica\+\_\+carater}} (char carater)
+\begin{DoxyCompactList}\small\item\em A função verifica\+\_\+carater recebe como parametro um token(carater) e precorre uma string que contém todos os carateres associados às operações aritméticas e de conversão. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{tokenizador_8h_aec91f88790c0adf5bc0311775b8302b9}\label{tokenizador_8h_aec91f88790c0adf5bc0311775b8302b9}} 
+\index{tokenizador.h@{tokenizador.h}!tokenizador@{tokenizador}}
+\index{tokenizador@{tokenizador}!tokenizador.h@{tokenizador.h}}
+\doxysubsubsection{\texorpdfstring{tokenizador()}{tokenizador()}}
+{\footnotesize\ttfamily void tokenizador (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{stack_8h_ade8bb1f37e07eb511f3873082665d739}{S\+T\+A\+CK}} $\ast$}]{s,  }\item[{char $\ast$}]{token }\end{DoxyParamCaption})}
+
+
+
+O tokenizador recebe a stack e um token passados como parâmetros do parser e lê condição a condição até encontrar o seu token correspondente. 
+
+\begin{DoxyAuthor}{Author}
+Simão Quintela 
+
+Hugo Rocha 
+
+Nuno Costa 
+
+Tiago Guedes 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em strtol} & Função pré-\/definida(stdlib.\+h) que é responsável por converter uma string para long caso a sobra do token seja 0, ou seja, caso o token seja um inteiro. \\
+\hline
+{\em strtod} & Função pré-\/definida(stdlib.\+h) que é responsável por converter uma string para double caso a sobra do token seja 0, ou seja, caso o token seja um double. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{tokenizador_8h_a9d26424e8dc37c9b0734796c82cbffb7}\label{tokenizador_8h_a9d26424e8dc37c9b0734796c82cbffb7}} 
+\index{tokenizador.h@{tokenizador.h}!verifica\_carater@{verifica\_carater}}
+\index{verifica\_carater@{verifica\_carater}!tokenizador.h@{tokenizador.h}}
+\doxysubsubsection{\texorpdfstring{verifica\_carater()}{verifica\_carater()}}
+{\footnotesize\ttfamily int verifica\+\_\+carater (\begin{DoxyParamCaption}\item[{char}]{carater }\end{DoxyParamCaption})}
+
+
+
+A função verifica\+\_\+carater recebe como parametro um token(carater) e precorre uma string que contém todos os carateres associados às operações aritméticas e de conversão. 
+
+\begin{DoxyAuthor}{Author}
+Simão Quintela 
+\end{DoxyAuthor}
+\begin{DoxyReturn}{Returns}
+Caso o carater seja igual a qualquer um dos tokens contidos na string, a função retorna 0(falso), senão retorna 1(verdadeiro); 
+\end{DoxyReturn}

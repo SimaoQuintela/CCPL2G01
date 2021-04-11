@@ -7,6 +7,10 @@
 #include "maths.h"
 #include "parser.h"
 
+/**
+* \author Hugo Rocha
+* \brief Roda para a esquerda os três elementos que estão no topo da stack.
+*/
 void rodatres(STACK *s){    // carater @
     DATA x = pop(s);
     DATA y = pop(s);
@@ -16,6 +20,11 @@ void rodatres(STACK *s){    // carater @
     push(s, z);
 }
 
+
+/**
+* \author Hugo Rocha
+* \brief troca os dois elementos que estão no topo da stack.
+*/
 void trocadois(STACK *s){    // carater '\'
     DATA x = pop(s);
     DATA y = pop(s);
@@ -23,6 +32,11 @@ void trocadois(STACK *s){    // carater '\'
     push(s, y);
 }
 
+
+/**
+* \author Hugo Rocha
+* \brief duplica o elemento que está no topo da stack.
+*/
 void duplica(STACK *s){   // carater _
     DATA x = pop(s);
     //pop(s);
@@ -30,14 +44,25 @@ void duplica(STACK *s){   // carater _
     push(s, x);
 }
 
+
+/**
+* \author Hugo Rocha
+* \brief remove o elemento que está no topo da stack.
+*/
 void popp(STACK *s){    // carater ;
     pop(s);
 }
 
+
+/**
+* \author Hugo Rocha
+* \brief copia o N-ésimo elemento para o topo da stack.
+*/
 void copian(STACK *s){        // carater $
     int x = pop_LONG(s);
     push(s, enesimo(s, x));   // enesimo definida na stack
 }
+
 
 /**
 * \author Simão Quintela

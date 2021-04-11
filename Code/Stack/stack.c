@@ -30,6 +30,10 @@ STACK *new_stack(){
 	return s;
 }
 
+/**
+* \brief Função responsável por guardar o elemento no topo da stack e incrementar o stack pointer.
+* @param realloc Caso a memória alocada não seja suficiente para dar push ao token, a função pré-definida (stdlib.h) realloc aloca mais 100 células de memória.
+*/
 void push(STACK *s, DATA elem){
 	if(s->size == s->n_elems){
 		s->size += 100;
@@ -39,11 +43,19 @@ void push(STACK *s, DATA elem){
 	s->n_elems++;
 }
 
+/**
+* \brief Função responsável por decrementar o stack pointer.
+* @returns Retorna o valor para o qual aponta o stack pointer depois de ser decrementado.
+*/
 DATA pop(STACK *s){
 	s->n_elems--;
 	return s->stack[s->n_elems];
 }
 
+/**
+* \brief Função responsável por retornar o que está no topo da stack.
+* @returns Retorna o que está no topo da stack.
+*/
 DATA top(STACK *s){
 	return s->stack[s->n_elems -1];
 }

@@ -4,7 +4,6 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
-
 #include "stack.h"
 #include "parser.h"
 #include "maths.h"
@@ -14,13 +13,13 @@
 /**
 * \brief A função parse recebe uma stack e uma linha (vindas da main), percorre essa linha separa em token e envia-os um a um para o tokenizador que os vai interpretar.
 * \brief Saindo do ciclo for, a função print_stack imprime a stack.
-* @param delims Servem para delimitar a seleção dos tokens.
-* @param strtok_r Usado para separar a string em tokens e, com o uso desta "extensão" à função strtok não há problema quanto a chamar mais que uma vez esta função.
+* @param s Passagem da stack como parâmetro
+* @param line Passagem da linha como parâmetro
 */
 void parse(STACK *s, char *line) {
   char *delims = " \t\n";
   char *token;
-
+  
   for(token = strtok_r(line, delims, &line); token != NULL; token = strtok_r(NULL, delims, &line)) {
       tokenizador(s, token);  
   }
@@ -28,16 +27,17 @@ void parse(STACK *s, char *line) {
   print_stack(s);
 }
 
+
 /**
 * \brief A função parse2 está responsável por ler linhas subsequentes à primeira 
-* @param delims Servem para delimitar a seleção dos tokens.
-* @param strtok_r Usado para separar a string em tokens e, com o uso desta "extensão" à função strtok não há problema quanto a chamar mais que uma vez esta função.
+* @param s Passagem da stack como parâmetro
+* @param line Passagem da linha como parâmetro
 */
 void parse2(STACK *s, char *line) {
   char *delims = " \t\n";
   char *token;
 
-  for(token = strtok_r(line, delims, &line); token != NULL; token = strtok_r(NULL, delims, &line)) {
+  for(token = strtok_r(line, delims, &line); token != NULL; token = strtok_r(NULL, delims,&line)) {
       tokenizador(s, token);  
   }
 }

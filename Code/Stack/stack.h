@@ -4,10 +4,8 @@
 #include <assert.h>
 
 typedef enum {LONG = 1, DOUBLE = 2, CHAR = 4, STRING = 8} TYPE;
-/*
-#define INTEGER(LONG | CHAR)
-#define NUMBER (INTEGER | DOUBLE)
-*/
+
+
 typedef struct data {
 	TYPE type;
 
@@ -29,7 +27,6 @@ void push(STACK *s, DATA elem);
 DATA pop(STACK *s);
 DATA top(STACK *s);
 DATA penultimo(STACK *s);
-int is_empty(STACK *s);
 void print_stack(STACK *s);
 DATA enesimo(STACK *s, int n);
 

@@ -16,7 +16,7 @@
 * \author Tiago Guedes
 * @param s Passagem da stack como parâmetro
 * @param token Partição da string que vai ser interpretada
-* \brief O tsokenizador recebe a stack e um token passados como parâmetros do parser e lê condição a condição até encontrar o seu token correspondente.
+* \brief O tokenizador recebe a stack e um token passados como parâmetros do parser e lê condição a condição até encontrar o seu token correspondente.
 */
 void tokenizador(STACK *s, char* token){
   char *sobra1;

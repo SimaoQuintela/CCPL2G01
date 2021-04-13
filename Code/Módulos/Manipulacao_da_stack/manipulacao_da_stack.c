@@ -10,6 +10,7 @@
 /**
 * \author Hugo Rocha
 * \brief Roda para a esquerda os três elementos que estão no topo da stack.
+* @param s Passagem da stack como parâmetro
 */
 void rodatres(STACK *s){    // carater @
     DATA x = pop(s);
@@ -24,6 +25,7 @@ void rodatres(STACK *s){    // carater @
 /**
 * \author Hugo Rocha
 * \brief troca os dois elementos que estão no topo da stack.
+* @param s Passagem da stack como parâmetro
 */
 void trocadois(STACK *s){    // carater '\'
     DATA x = pop(s);
@@ -36,6 +38,7 @@ void trocadois(STACK *s){    // carater '\'
 /**
 * \author Hugo Rocha
 * \brief duplica o elemento que está no topo da stack.
+* @param s Passagem da stack como parâmetro
 */
 void duplica(STACK *s){   // carater _
     DATA x = pop(s);
@@ -48,6 +51,7 @@ void duplica(STACK *s){   // carater _
 /**
 * \author Hugo Rocha
 * \brief remove o elemento que está no topo da stack.
+* @param s Passagem da stack como parâmetro
 */
 void popp(STACK *s){    // carater ;
     pop(s);
@@ -57,6 +61,7 @@ void popp(STACK *s){    // carater ;
 /**
 * \author Hugo Rocha
 * \brief copia o N-ésimo elemento para o topo da stack.
+* @param s Passagem da stack como parâmetro
 */
 void copian(STACK *s){        // carater $
     int x = pop_LONG(s);
@@ -67,6 +72,7 @@ void copian(STACK *s){        // carater $
 /**
 * \author Simão Quintela
 * \brief converte o elemento que está no topo da stack para um long.
+* @param s Passagem da stack como parâmetro
 */
 void converte_para_long(STACK *s){
     if(has_type(top(s), DOUBLE)){
@@ -83,6 +89,7 @@ void converte_para_long(STACK *s){
 /**
 * \author Simão Quintela
 * \brief converte o elemento que está no topo da stack para um double.
+* @param s Passagem da stack como parâmetro
 */
 void converte_para_double(STACK *s){
     if(has_type(top(s), LONG)){
@@ -99,6 +106,7 @@ void converte_para_double(STACK *s){
 /**
 * \author Simão Quintela
 * \brief converte o elemento que está no topo da stack para um char.
+* @param s Passagem da stack como parâmetro
 */
 void converte_para_char(STACK *s){
     if(has_type(top(s), LONG)){
@@ -115,6 +123,7 @@ void converte_para_char(STACK *s){
 /**
 * \author Simão Quintela
 * \brief lê uma nova linha e envia-a para o parse2 onde vai ser enviada para o tokenizador para ser interpretada sendo que no fim da sua interpretação não é imprimida.
+* @param s Passagem da stack como parâmetro
 */
 void ler_linha(STACK *s){
     char linha[BUFSIZ];

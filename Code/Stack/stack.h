@@ -3,22 +3,36 @@
 
 #include <assert.h>
 
-typedef enum {LONG = 1, DOUBLE = 2, CHAR = 4, STRING = 8} TYPE;
+/**
+* \brief Struct que enumera os tipos e que vai aplica-los na struct data
+*/
+typedef enum {
+	LONG = 1,	/** Máscara com o valor 1 associado ao tipo long */
+	DOUBLE = 2,	/** Máscara com o valor 2 associado ao tipo double */
+	CHAR = 4,	/** Máscara com o valor 4 associado ao tipo char */
+	STRING = 8	/** Máscara com o valor 8 associado ao tipo string */
+} TYPE;
 
 
+/**
+* Uma struct que nos dá os tipos de dados que estamos a usar na stack
+*/
 typedef struct data {
-	TYPE type;
+	TYPE type;	/** Máscaras vindas do enum TYPE */
 
-	long LONG;
-	double DOUBLE;
-	char CHAR;
-	char *STRING;
+	long LONG;	/** Tipo long */
+	double DOUBLE;	/** Tipo double */
+	char CHAR;	/** Tipo char */
+	char *STRING;	/** Tipo string */
 } DATA;
 
+/**
+* \brief Struct que define a estrutura da stack, tendo ela uma inicialização com os tipos definidos em data, com uma variável que dá o tamanho e o número de elementos presentes na stack
+*/
 typedef struct stack{
-	DATA *stack;
-	int size;
-	int n_elems;
+	DATA *stack;	/** Tipo da stack */
+	int size;		/** Tamanho da stack */
+	int n_elems;	/** Número de elementos ao momento na stack */
 } STACK;
 
 int has_type(DATA elem, int mask);

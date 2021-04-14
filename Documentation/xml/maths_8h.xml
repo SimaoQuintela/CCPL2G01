@@ -1,0 +1,463 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="maths_8h" kind="file" language="C++">
+    <compoundname>maths.h</compoundname>
+    <includes refid="stack_8h" local="yes">stack.h</includes>
+    <includedby refid="manipulacao__da__stack_8c" local="yes">manipulacao_da_stack.c</includedby>
+    <includedby refid="maths_8c" local="yes">maths.c</includedby>
+    <includedby refid="parser_8c" local="yes">parser.c</includedby>
+    <includedby refid="tokenizador_8c" local="yes">tokenizador.c</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>assert.h</label>
+      </node>
+      <node id="1">
+        <label>maths.h</label>
+        <link refid="maths_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stack.h</label>
+        <link refid="stack_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4">
+        <label>parser.c</label>
+        <link refid="parser_8c"/>
+      </node>
+      <node id="2">
+        <label>manipulacao_da_stack.c</label>
+        <link refid="manipulacao__da__stack_8c"/>
+      </node>
+      <node id="3">
+        <label>maths.c</label>
+        <link refid="maths_8c"/>
+      </node>
+      <node id="1">
+        <label>maths.h</label>
+        <link refid="maths_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>tokenizador.c</label>
+        <link refid="tokenizador_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="maths_8h_1ab036ce08365356af3d41ddf51b84d4b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void soma</definition>
+        <argsstring>(STACK *s)</argsstring>
+        <name>soma</name>
+        <param>
+          <type><ref refid="stack_8h_1ade8bb1f37e07eb511f3873082665d739" kindref="member">STACK</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Função soma(+) para cada tipo, exceto strings. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Nuno Costa </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Passagem da stack como parâmetro </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="maths.h" line="3" column="6" bodyfile="maths.c" bodystart="19" bodyend="74" declfile="maths.h" declline="3" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="maths_8h_1a90cd2dffdaa4518db18fc9804904e16e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void subtrai</definition>
+        <argsstring>(STACK *s)</argsstring>
+        <name>subtrai</name>
+        <param>
+          <type><ref refid="stack_8h_1ade8bb1f37e07eb511f3873082665d739" kindref="member">STACK</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Função subtração(-) para cada tipo, exceto strings. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Simão Quintela </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Passagem da stack como parâmetro </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="maths.h" line="5" column="6" bodyfile="maths.c" bodystart="82" bodyend="138" declfile="maths.h" declline="5" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="maths_8h_1a1a83e81a0989cfe6e96090f7fc2d2198" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void multiplica</definition>
+        <argsstring>(STACK *s)</argsstring>
+        <name>multiplica</name>
+        <param>
+          <type><ref refid="stack_8h_1ade8bb1f37e07eb511f3873082665d739" kindref="member">STACK</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Função multiplicação(*) para cada tipo, exceto strings. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Simão Quintela </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Passagem da stack como parâmetro </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="maths.h" line="8" column="6" bodyfile="maths.c" bodystart="146" bodyend="201" declfile="maths.h" declline="8" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="maths_8h_1a9d9afcdfcf47ca08bcd8b31031871b06" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void dividir</definition>
+        <argsstring>(STACK *s)</argsstring>
+        <name>dividir</name>
+        <param>
+          <type><ref refid="stack_8h_1ade8bb1f37e07eb511f3873082665d739" kindref="member">STACK</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Função divisão(/) para cada tipo, exceto strings. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Hugo Rocha </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Passagem da stack como parâmetro </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="maths.h" line="11" column="6" bodyfile="maths.c" bodystart="208" bodyend="272" declfile="maths.h" declline="11" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="maths_8h_1a954e9383095a145d1cb6a1a2d26aa451" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void decrementa</definition>
+        <argsstring>(STACK *s)</argsstring>
+        <name>decrementa</name>
+        <param>
+          <type><ref refid="stack_8h_1ade8bb1f37e07eb511f3873082665d739" kindref="member">STACK</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Função responsável por decrementar(() 1 unidade para cada tipo, exceto strings. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Hugo Rocha </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Passagem da stack como parâmetro </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="maths.h" line="14" column="6" bodyfile="maths.c" bodystart="280" bodyend="295" declfile="maths.h" declline="14" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="maths_8h_1a10508636af2171860e5d038a7d07f7e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void incrementa</definition>
+        <argsstring>(STACK *s)</argsstring>
+        <name>incrementa</name>
+        <param>
+          <type><ref refid="stack_8h_1ade8bb1f37e07eb511f3873082665d739" kindref="member">STACK</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Função responsável por incrementar()) 1 unidade para cada tipo, exceto strings. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Hugo Rocha </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Passagem da stack como parâmetro </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="maths.h" line="17" column="6" bodyfile="maths.c" bodystart="302" bodyend="316" declfile="maths.h" declline="17" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="maths_8h_1ac47c510fef88bce38e48b07b6017c54e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void modulo</definition>
+        <argsstring>(STACK *s)</argsstring>
+        <name>modulo</name>
+        <param>
+          <type><ref refid="stack_8h_1ade8bb1f37e07eb511f3873082665d739" kindref="member">STACK</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Função módulo(%) para cada tipo, exceto strings e doubles. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Nuno Costa </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Passagem da stack como parâmetro </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="maths.h" line="20" column="6" bodyfile="maths.c" bodystart="325" bodyend="354" declfile="maths.h" declline="20" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="maths_8h_1aee5455267a8b55e25e0a08fabf4a52f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void expoente</definition>
+        <argsstring>(STACK *s)</argsstring>
+        <name>expoente</name>
+        <param>
+          <type><ref refid="stack_8h_1ade8bb1f37e07eb511f3873082665d739" kindref="member">STACK</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Função expoente(#) para cada tipo, exceto strings. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Tiago Guedes </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Passagem da stack como parâmetro </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="maths.h" line="23" column="6" bodyfile="maths.c" bodystart="362" bodyend="417" declfile="maths.h" declline="23" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="maths_8h_1a24a2dde30b31ba5f47e7d2629db92f5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void e</definition>
+        <argsstring>(STACK *s)</argsstring>
+        <name>e</name>
+        <param>
+          <type><ref refid="stack_8h_1ade8bb1f37e07eb511f3873082665d739" kindref="member">STACK</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Função &quot;e&quot;(&amp;) responsável por determinar a interseção de bits entre dois números inteiros. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Tiago Guedes </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Passagem da stack como parâmetro </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="maths.h" line="26" column="6" bodyfile="maths.c" bodystart="425" bodyend="450" declfile="maths.h" declline="26" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="maths_8h_1a3429e63d3d7972ee8ebddf4423934dcd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ou</definition>
+        <argsstring>(STACK *s)</argsstring>
+        <name>ou</name>
+        <param>
+          <type><ref refid="stack_8h_1ade8bb1f37e07eb511f3873082665d739" kindref="member">STACK</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Função &quot;ou&quot;(|) responsável por determinar a reunião de bits entre dois números inteiros. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Tiago Guedes </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Passagem da stack como parâmetro </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="maths.h" line="29" column="6" bodyfile="maths.c" bodystart="457" bodyend="482" declfile="maths.h" declline="29" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="maths_8h_1a83f2bddece3797ca5d999ca6add31383" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void xorr</definition>
+        <argsstring>(STACK *s)</argsstring>
+        <name>xorr</name>
+        <param>
+          <type><ref refid="stack_8h_1ade8bb1f37e07eb511f3873082665d739" kindref="member">STACK</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Função xor(^) responsável por colocar a 0 todos os bits em comum e a 1 todos os bits diferentes entre si, de dois números e calcular o seu resultado. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Paulo Vasconcelos </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Passagem da stack como parâmetro </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="maths.h" line="32" column="6" bodyfile="maths.c" bodystart="489" bodyend="513" declfile="maths.h" declline="32" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="maths_8h_1a1d7fc0fc91e406a305818024758e17ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void nott</definition>
+        <argsstring>(STACK *s)</argsstring>
+        <name>nott</name>
+        <param>
+          <type><ref refid="stack_8h_1ade8bb1f37e07eb511f3873082665d739" kindref="member">STACK</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Função nott responsável por inverter todos os bits de um número inteiro. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Paulo Vasconcelos </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Passagem da stack como parâmetro </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="maths.h" line="35" column="6" bodyfile="maths.c" bodystart="519" bodyend="531" declfile="maths.h" declline="35" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="stack_8h" kindref="compound">stack.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="maths_8h_1ab036ce08365356af3d41ddf51b84d4b6" kindref="member">soma</ref>(<ref refid="structstack" kindref="compound">STACK</ref><sp/>*s);</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="maths_8h_1a90cd2dffdaa4518db18fc9804904e16e" kindref="member">subtrai</ref>(<ref refid="structstack" kindref="compound">STACK</ref><sp/>*s);</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="maths_8h_1a1a83e81a0989cfe6e96090f7fc2d2198" kindref="member">multiplica</ref>(<ref refid="structstack" kindref="compound">STACK</ref><sp/>*s);</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="maths_8h_1a9d9afcdfcf47ca08bcd8b31031871b06" kindref="member">dividir</ref>(<ref refid="structstack" kindref="compound">STACK</ref><sp/>*s);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="maths_8h_1a954e9383095a145d1cb6a1a2d26aa451" kindref="member">decrementa</ref>(<ref refid="structstack" kindref="compound">STACK</ref><sp/>*s);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="maths_8h_1a10508636af2171860e5d038a7d07f7e0" kindref="member">incrementa</ref>(<ref refid="structstack" kindref="compound">STACK</ref><sp/>*s);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="maths_8h_1ac47c510fef88bce38e48b07b6017c54e" kindref="member">modulo</ref>(<ref refid="structstack" kindref="compound">STACK</ref><sp/>*s);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="maths_8h_1aee5455267a8b55e25e0a08fabf4a52f8" kindref="member">expoente</ref>(<ref refid="structstack" kindref="compound">STACK</ref><sp/>*s);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="maths_8h_1a24a2dde30b31ba5f47e7d2629db92f5a" kindref="member">e</ref>(<ref refid="structstack" kindref="compound">STACK</ref><sp/>*s);<sp/></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="maths_8h_1a3429e63d3d7972ee8ebddf4423934dcd" kindref="member">ou</ref>(<ref refid="structstack" kindref="compound">STACK</ref><sp/>*s);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="maths_8h_1a83f2bddece3797ca5d999ca6add31383" kindref="member">xorr</ref>(<ref refid="structstack" kindref="compound">STACK</ref><sp/>*s);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="maths_8h_1a1d7fc0fc91e406a305818024758e17ae" kindref="member">nott</ref>(<ref refid="structstack" kindref="compound">STACK</ref><sp/>*s);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="maths.h"/>
+  </compounddef>
+</doxygen>

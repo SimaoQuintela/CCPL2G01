@@ -1,0 +1,56 @@
+\hypertarget{parser_8c}{}\doxysection{parser.\+c File Reference}
+\label{parser_8c}\index{parser.c@{parser.c}}
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}stack.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}parser.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}maths.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tokenizador.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}manipulacao\+\_\+da\+\_\+stack.\+h\char`\"{}}\newline
+Include dependency graph for parser.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{parser_8c_ac99bd4fc8de6663c68f59305ddb03f77}{parse}} (\mbox{\hyperlink{stack_8h_ade8bb1f37e07eb511f3873082665d739}{S\+T\+A\+CK}} $\ast$s, char $\ast$line)
+\begin{DoxyCompactList}\small\item\em A função parse recebe uma stack e uma linha (vindas da main), percorre essa linha separa em token e envia-\/os um a um para o tokenizador que os vai interpretar. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{parser_8c_ac7065d64fdb4df5135f2ae8f41bc886a}{parse2}} (\mbox{\hyperlink{stack_8h_ade8bb1f37e07eb511f3873082665d739}{S\+T\+A\+CK}} $\ast$s, char $\ast$line)
+\begin{DoxyCompactList}\small\item\em A função parse2 está responsável por ler linhas subsequentes à primeira. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{parser_8c_ac99bd4fc8de6663c68f59305ddb03f77}\label{parser_8c_ac99bd4fc8de6663c68f59305ddb03f77}} 
+\index{parser.c@{parser.c}!parse@{parse}}
+\index{parse@{parse}!parser.c@{parser.c}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily void parse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{stack_8h_ade8bb1f37e07eb511f3873082665d739}{S\+T\+A\+CK}} $\ast$}]{s,  }\item[{char $\ast$}]{line }\end{DoxyParamCaption})}
+
+
+
+A função parse recebe uma stack e uma linha (vindas da main), percorre essa linha separa em token e envia-\/os um a um para o tokenizador que os vai interpretar. 
+
+Saindo do ciclo for, a função print\+\_\+stack imprime a stack. 
+\begin{DoxyParams}{Parameters}
+{\em s} & Passagem da stack como parâmetro \\
+\hline
+{\em line} & Passagem da linha como parâmetro \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{parser_8c_ac7065d64fdb4df5135f2ae8f41bc886a}\label{parser_8c_ac7065d64fdb4df5135f2ae8f41bc886a}} 
+\index{parser.c@{parser.c}!parse2@{parse2}}
+\index{parse2@{parse2}!parser.c@{parser.c}}
+\doxysubsubsection{\texorpdfstring{parse2()}{parse2()}}
+{\footnotesize\ttfamily void parse2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{stack_8h_ade8bb1f37e07eb511f3873082665d739}{S\+T\+A\+CK}} $\ast$}]{s,  }\item[{char $\ast$}]{line }\end{DoxyParamCaption})}
+
+
+
+A função parse2 está responsável por ler linhas subsequentes à primeira. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Passagem da stack como parâmetro \\
+\hline
+{\em line} & Passagem da linha como parâmetro \\
+\hline
+\end{DoxyParams}

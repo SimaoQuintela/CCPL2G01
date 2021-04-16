@@ -4,13 +4,14 @@
 #include <assert.h>
 
 /**
-* \brief Struct que enumera os tipos e que vai aplica-los na struct data
+*  Struct que enumera os tipos e que vai aplica-los na struct data
+*
 */
 typedef enum {
-	LONG = 1,	/** Máscara com o valor 1 associado ao tipo long */
-	DOUBLE = 2,	/** Máscara com o valor 2 associado ao tipo double */
-	CHAR = 4,	/** Máscara com o valor 4 associado ao tipo char */
-	STRING = 8	/** Máscara com o valor 8 associado ao tipo string */
+	LONG = 1,	/**< Tipo LOng com o valor 1 (2⁰) associado */
+	DOUBLE = 2,	/**< Tipo Double com o valor 2 (2¹) associado */
+	CHAR = 4,	/**< Tipo Char com o valor 4 (2²) associado */
+	STRING = 8	/**< Tipo String com o valor 8 (2³) */
 } TYPE;
 
 
@@ -18,21 +19,20 @@ typedef enum {
 * Uma struct que nos dá os tipos de dados que estamos a usar na stack
 */
 typedef struct data {
-	TYPE type;	/** Máscaras vindas do enum TYPE */
-
-	long LONG;	/** Tipo long */
-	double DOUBLE;	/** Tipo double */
-	char CHAR;	/** Tipo char */
-	char *STRING;	/** Tipo string */
+	TYPE type;	/**< tipos de dados vindos do enum TYPE */
+	long LONG;	/**< Tipo long */
+	double DOUBLE;	/**< Tipo double */
+	char CHAR;	/**< Tipo char */
+	char *STRING;	/**< Tipo string */
 } DATA;
 
 /**
-* \brief Struct que define a estrutura da stack, tendo ela uma inicialização com os tipos definidos em data, com uma variável que dá o tamanho e o número de elementos presentes na stack
+* Struct que define a estrutura da stack, tendo ela uma inicialização com os tipos definidos em data, com uma variável que dá o tamanho e o número de elementos presentes na stack
 */
 typedef struct stack{
-	DATA *stack;	/** Tipo da stack */
-	int size;		/** Tamanho da stack */
-	int n_elems;	/** Número de elementos ao momento na stack */
+	DATA *stack;	/**< Tipo da stack */
+	int size;	/**< Tamanho da stack */
+	int n_elems;	/**< Número de elementos ao momento na stack */
 } STACK;
 
 int has_type(DATA elem, int mask);
@@ -44,6 +44,9 @@ DATA penultimo(STACK *s);
 void print_stack(STACK *s);
 DATA enesimo(STACK *s, int n);
 
+/**
+* Macro que faz a substituição de texto de acordo com o stack_operation correspondente para podermos ter de uma forma rápida e eficiente um push e um pop para cada tipo.
+*/
 #define STACK_OPERATION_PROTO(_type, _name)		\
 	void push_##_name(STACK *s, _type val);		\
 	_type pop_##_name(STACK *s);

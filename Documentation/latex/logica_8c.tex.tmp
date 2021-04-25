@@ -1,0 +1,131 @@
+\hypertarget{logica_8c}{}\doxysection{logica.\+c File Reference}
+\label{logica_8c}\index{logica.c@{logica.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}stack.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}logica.\+h\char`\"{}}\newline
+Include dependency graph for logica.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{logica_8c_a03a319c4e68fdab9d4c2ff093dc59afc}{emaior}} (\mbox{\hyperlink{stack_8h_ade8bb1f37e07eb511f3873082665d739}{S\+T\+A\+CK}} $\ast$s)
+\item 
+void \mbox{\hyperlink{logica_8c_a5d12c127611e979d51b407f731a21dfb}{emenor}} (\mbox{\hyperlink{stack_8h_ade8bb1f37e07eb511f3873082665d739}{S\+T\+A\+CK}} $\ast$s)
+\item 
+void \mbox{\hyperlink{logica_8c_af0660d82eeb7dcd538af4f22d778dfc8}{igual}} (\mbox{\hyperlink{stack_8h_ade8bb1f37e07eb511f3873082665d739}{S\+T\+A\+CK}} $\ast$s)
+\item 
+void \mbox{\hyperlink{logica_8c_aa14f0c5f29498e8b6fe16ffa6256d7af}{menor}} (\mbox{\hyperlink{stack_8h_ade8bb1f37e07eb511f3873082665d739}{S\+T\+A\+CK}} $\ast$s)
+\item 
+void \mbox{\hyperlink{logica_8c_aa7e47cdda15b522ab0f1e98dfa83e16d}{maior}} (\mbox{\hyperlink{stack_8h_ade8bb1f37e07eb511f3873082665d739}{S\+T\+A\+CK}} $\ast$s)
+\item 
+void \mbox{\hyperlink{logica_8c_a6ccbbdb78ac2739d4d38744bbc9ca8ea}{nao}} (\mbox{\hyperlink{stack_8h_ade8bb1f37e07eb511f3873082665d739}{S\+T\+A\+CK}} $\ast$s)
+\item 
+void \mbox{\hyperlink{logica_8c_ae836899daf6bd167a669c8260acfc77d}{ifthenelse}} (\mbox{\hyperlink{stack_8h_ade8bb1f37e07eb511f3873082665d739}{S\+T\+A\+CK}} $\ast$s)
+\item 
+void \mbox{\hyperlink{logica_8c_a88a26fe2f7954efa7c6167b7a14a6380}{ee}} (\mbox{\hyperlink{stack_8h_ade8bb1f37e07eb511f3873082665d739}{S\+T\+A\+CK}} $\ast$s)
+\item 
+void \mbox{\hyperlink{logica_8c_a95da3229997179792b6581db14987043}{eou}} (\mbox{\hyperlink{stack_8h_ade8bb1f37e07eb511f3873082665d739}{S\+T\+A\+CK}} $\ast$s)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{logica_8c_a88a26fe2f7954efa7c6167b7a14a6380}\label{logica_8c_a88a26fe2f7954efa7c6167b7a14a6380}} 
+\index{logica.c@{logica.c}!ee@{ee}}
+\index{ee@{ee}!logica.c@{logica.c}}
+\doxysubsubsection{\texorpdfstring{ee()}{ee()}}
+{\footnotesize\ttfamily void ee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{stack_8h_ade8bb1f37e07eb511f3873082665d739}{S\+T\+A\+CK}} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Passagem da stack como parametro \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{logica_8c_a03a319c4e68fdab9d4c2ff093dc59afc}\label{logica_8c_a03a319c4e68fdab9d4c2ff093dc59afc}} 
+\index{logica.c@{logica.c}!emaior@{emaior}}
+\index{emaior@{emaior}!logica.c@{logica.c}}
+\doxysubsubsection{\texorpdfstring{emaior()}{emaior()}}
+{\footnotesize\ttfamily void emaior (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{stack_8h_ade8bb1f37e07eb511f3873082665d739}{S\+T\+A\+CK}} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Passagem da stack como parametro \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{logica_8c_a5d12c127611e979d51b407f731a21dfb}\label{logica_8c_a5d12c127611e979d51b407f731a21dfb}} 
+\index{logica.c@{logica.c}!emenor@{emenor}}
+\index{emenor@{emenor}!logica.c@{logica.c}}
+\doxysubsubsection{\texorpdfstring{emenor()}{emenor()}}
+{\footnotesize\ttfamily void emenor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{stack_8h_ade8bb1f37e07eb511f3873082665d739}{S\+T\+A\+CK}} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Passagem da stack como parametro \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{logica_8c_a95da3229997179792b6581db14987043}\label{logica_8c_a95da3229997179792b6581db14987043}} 
+\index{logica.c@{logica.c}!eou@{eou}}
+\index{eou@{eou}!logica.c@{logica.c}}
+\doxysubsubsection{\texorpdfstring{eou()}{eou()}}
+{\footnotesize\ttfamily void eou (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{stack_8h_ade8bb1f37e07eb511f3873082665d739}{S\+T\+A\+CK}} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Passagem da stack como parametro \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{logica_8c_ae836899daf6bd167a669c8260acfc77d}\label{logica_8c_ae836899daf6bd167a669c8260acfc77d}} 
+\index{logica.c@{logica.c}!ifthenelse@{ifthenelse}}
+\index{ifthenelse@{ifthenelse}!logica.c@{logica.c}}
+\doxysubsubsection{\texorpdfstring{ifthenelse()}{ifthenelse()}}
+{\footnotesize\ttfamily void ifthenelse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{stack_8h_ade8bb1f37e07eb511f3873082665d739}{S\+T\+A\+CK}} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Passagem da stack como parametro \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{logica_8c_af0660d82eeb7dcd538af4f22d778dfc8}\label{logica_8c_af0660d82eeb7dcd538af4f22d778dfc8}} 
+\index{logica.c@{logica.c}!igual@{igual}}
+\index{igual@{igual}!logica.c@{logica.c}}
+\doxysubsubsection{\texorpdfstring{igual()}{igual()}}
+{\footnotesize\ttfamily void igual (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{stack_8h_ade8bb1f37e07eb511f3873082665d739}{S\+T\+A\+CK}} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Passagem da stack como parametro \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{logica_8c_aa7e47cdda15b522ab0f1e98dfa83e16d}\label{logica_8c_aa7e47cdda15b522ab0f1e98dfa83e16d}} 
+\index{logica.c@{logica.c}!maior@{maior}}
+\index{maior@{maior}!logica.c@{logica.c}}
+\doxysubsubsection{\texorpdfstring{maior()}{maior()}}
+{\footnotesize\ttfamily void maior (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{stack_8h_ade8bb1f37e07eb511f3873082665d739}{S\+T\+A\+CK}} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Passagem da stack como parametro \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{logica_8c_aa14f0c5f29498e8b6fe16ffa6256d7af}\label{logica_8c_aa14f0c5f29498e8b6fe16ffa6256d7af}} 
+\index{logica.c@{logica.c}!menor@{menor}}
+\index{menor@{menor}!logica.c@{logica.c}}
+\doxysubsubsection{\texorpdfstring{menor()}{menor()}}
+{\footnotesize\ttfamily void menor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{stack_8h_ade8bb1f37e07eb511f3873082665d739}{S\+T\+A\+CK}} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Passagem da stack como parametro \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{logica_8c_a6ccbbdb78ac2739d4d38744bbc9ca8ea}\label{logica_8c_a6ccbbdb78ac2739d4d38744bbc9ca8ea}} 
+\index{logica.c@{logica.c}!nao@{nao}}
+\index{nao@{nao}!logica.c@{logica.c}}
+\doxysubsubsection{\texorpdfstring{nao()}{nao()}}
+{\footnotesize\ttfamily void nao (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{stack_8h_ade8bb1f37e07eb511f3873082665d739}{S\+T\+A\+CK}} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Passagem da stack como parametro \\
+\hline
+\end{DoxyParams}

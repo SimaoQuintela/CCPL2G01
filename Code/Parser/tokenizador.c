@@ -81,6 +81,38 @@ int verifica_carater(char carater){
   return resultado;
 }
 
+/**
+* \author Hugo Rocha
+* \brief verifica se o token é uma string
+* @param token Token a comparar
+* @returns Retorna 1 se for verdadeiro e 0 se for falso
+*/
+int verifica_string(char token[]){
+  int resultado = 1;
+
+  if ((strcmp(token, "e>") == 0) || (strcmp(token, "e<") == 0) || (strcmp(token, "e|") == 0) || (strcmp(token, "e&")  == 0))
+  	resultado = 0;
+
+  return resultado;
+
+}
+
+/**
+* \author Hugo Rocha
+* @param token Token a ser comparado
+* @returns Retorna 1 se for verdadeiro e 0 se for falso
+*/
+int verifica_variavel(char token){
+  int resultado = 0;
+
+  char string_de_variaveis[25] = "ABCDEFGHIJKLMNOPQRSTUVXYZ";
+
+  for(int i = 0; string_de_variaveis[i]; i++)
+    if(string_de_variaveis[i] == token) resultado = 1;
+  
+
+  return resultado;
+}
 
 
 

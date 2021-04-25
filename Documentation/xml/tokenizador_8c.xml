@@ -1,0 +1,441 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="tokenizador_8c" kind="file" language="C++">
+    <compoundname>tokenizador.c</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">string.h</includes>
+    <includes refid="stack_8h" local="yes">stack.h</includes>
+    <includes refid="tokenizador_8h" local="yes">tokenizador.h</includes>
+    <includes refid="maths_8h" local="yes">maths.h</includes>
+    <includes refid="manipulacao__da__stack_8h" local="yes">manipulacao_da_stack.h</includes>
+    <includes refid="logica_8h" local="yes">logica.h</includes>
+    <incdepgraph>
+      <node id="9">
+        <label>manipulacao_da_stack.h</label>
+        <link refid="manipulacao__da__stack_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>assert.h</label>
+      </node>
+      <node id="3">
+        <label>stdlib.h</label>
+      </node>
+      <node id="10">
+        <label>logica.h</label>
+        <link refid="logica_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>string.h</label>
+      </node>
+      <node id="5">
+        <label>stack.h</label>
+        <link refid="stack_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>maths.h</label>
+        <link refid="maths_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stdio.h</label>
+      </node>
+      <node id="1">
+        <label>tokenizador.c</label>
+        <link refid="tokenizador_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>tokenizador.h</label>
+        <link refid="tokenizador_8h"/>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="tokenizador_8c_1a2600ccfe7b141799809e6e2985cdb44d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tokenizador</definition>
+        <argsstring>(STACK *s, STACK *letras, char *token)</argsstring>
+        <name>tokenizador</name>
+        <param>
+          <type><ref refid="stack_8h_1ade8bb1f37e07eb511f3873082665d739" kindref="member">STACK</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type><ref refid="stack_8h_1ade8bb1f37e07eb511f3873082665d739" kindref="member">STACK</ref> *</type>
+          <declname>letras</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>token</declname>
+        </param>
+        <briefdescription>
+<para>O tokenizador recebe a stack e um token passados como parâmetros do parser e lê condição a condição até encontrar o seu token correspondente. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Simão Quintela </para>
+</simplesect>
+<simplesect kind="author"><para>Hugo Rocha </para>
+</simplesect>
+<simplesect kind="author"><para>Nuno Costa </para>
+</simplesect>
+<simplesect kind="author"><para>Tiago Guedes </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Passagem da stack como parametro. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>letras</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Passagem das letras como parametro </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>token</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Token a ser interpretado </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tokenizador.c" line="25" column="6" bodyfile="tokenizador.c" bodystart="25" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="tokenizador_8c_1a9d26424e8dc37c9b0734796c82cbffb7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int verifica_carater</definition>
+        <argsstring>(char carater)</argsstring>
+        <name>verifica_carater</name>
+        <param>
+          <type>char</type>
+          <declname>carater</declname>
+        </param>
+        <briefdescription>
+<para>A função verifica_carater recebe como parametro um token(carater) e percorre uma string que contém todos os carateres associados às operações aritméticas e de conversão. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Simão Quintela </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>carater</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Recebe o carater a ser comparado </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Caso o carater seja igual a qualquer um dos tokens contidos na string, a função retorna 0(falso), senão retorna 1(verdadeiro); </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tokenizador.c" line="72" column="5" bodyfile="tokenizador.c" bodystart="72" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="tokenizador_8c_1a93b9df9bd284e25390d7f4d49683746a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int verifica_string</definition>
+        <argsstring>(char token[])</argsstring>
+        <name>verifica_string</name>
+        <param>
+          <type>char</type>
+          <declname>token</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+<para>verifica se o token é uma string </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Hugo Rocha </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>token</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Token a comparar </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Retorna 1 se for verdadeiro e 0 se for falso </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tokenizador.c" line="92" column="5" bodyfile="tokenizador.c" bodystart="92" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="tokenizador_8c_1a7d542ba2ab41ce00b9d61ecdc8f11cf5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int verifica_variavel</definition>
+        <argsstring>(char token)</argsstring>
+        <name>verifica_variavel</name>
+        <param>
+          <type>char</type>
+          <declname>token</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Hugo Rocha </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>token</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Token a ser comparado </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Retorna 1 se for verdadeiro e 0 se for falso </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tokenizador.c" line="107" column="5" bodyfile="tokenizador.c" bodystart="107" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="tokenizador_8c_1a352292cf1b079e49ab476f2bfd672231" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void executa_funcao_aritmetica</definition>
+        <argsstring>(char carater, STACK *s, STACK *letras)</argsstring>
+        <name>executa_funcao_aritmetica</name>
+        <param>
+          <type>char</type>
+          <declname>carater</declname>
+        </param>
+        <param>
+          <type><ref refid="stack_8h_1ade8bb1f37e07eb511f3873082665d739" kindref="member">STACK</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type><ref refid="stack_8h_1ade8bb1f37e07eb511f3873082665d739" kindref="member">STACK</ref> *</type>
+          <declname>letras</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Simão Quintela </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>carater</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Carater a ser comparado </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Passagem da stack como parametro </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>letras</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Passagem das letras como parametro </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tokenizador.c" line="125" column="6" bodyfile="tokenizador.c" bodystart="125" bodyend="182"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="4"><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="stack_8h" kindref="compound">stack.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="tokenizador_8h" kindref="compound">tokenizador.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="maths_8h" kindref="compound">maths.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="manipulacao__da__stack_8h" kindref="compound">manipulacao_da_stack.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="logica_8h" kindref="compound">logica.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="tokenizador_8c_1a2600ccfe7b141799809e6e2985cdb44d" kindref="member">tokenizador</ref>(<ref refid="structstack" kindref="compound">STACK</ref><sp/>*s,<sp/><ref refid="structstack" kindref="compound">STACK</ref><sp/>*letras,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>token){</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*sobra1;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*sobra2;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>carater<sp/>=<sp/>token[0];</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>val_l<sp/>=<sp/>strtol(token,<sp/>&amp;sobra1,<sp/>10);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>val_d<sp/>=<sp/>strtod(token,<sp/>&amp;sobra2);<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(strlen(sobra1)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>push_LONG(s,<sp/>val_l);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(strlen(sobra2)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>push_DOUBLE(s,<sp/>val_d);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((strlen(token)<sp/>!=<sp/>1)<sp/>&amp;&amp;<sp/>(<ref refid="tokenizador_8c_1a93b9df9bd284e25390d7f4d49683746a" kindref="member">verifica_string</ref>(token)<sp/>==<sp/>1)<sp/>&amp;&amp;<sp/>(carater<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal">))</highlight><highlight class="comment">/*(strcmp(token,<sp/>&quot;e&gt;&quot;)<sp/>!=<sp/>0)<sp/>&amp;&amp;<sp/>(strcmp(token,<sp/>&quot;e&lt;&quot;)<sp/>!=<sp/>0)*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>push_STRING(s,<sp/>token);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((strlen(token)<sp/>==<sp/>1)<sp/>&amp;&amp;<sp/>(<ref refid="tokenizador_8c_1a9d26424e8dc37c9b0734796c82cbffb7" kindref="member">verifica_carater</ref>(carater)<sp/>==<sp/>1)<sp/>&amp;&amp;<sp/>(<ref refid="tokenizador_8c_1a7d542ba2ab41ce00b9d61ecdc8f11cf5" kindref="member">verifica_variavel</ref>(carater)<sp/>==<sp/>0))<sp/></highlight><highlight class="comment">//&amp;&amp;<sp/>(verifica_string(token)<sp/>==<sp/>1))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>push_CHAR(s,<sp/>carater);<sp/></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(strcmp(token,<sp/></highlight><highlight class="stringliteral">&quot;e&gt;&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="logica_8c_1a03a319c4e68fdab9d4c2ff093dc59afc" kindref="member">emaior</ref>(s);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(strcmp(token,<sp/></highlight><highlight class="stringliteral">&quot;e&lt;&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><ref refid="logica_8c_1a5d12c127611e979d51b407f731a21dfb" kindref="member">emenor</ref>(s);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(strcmp(token,<sp/></highlight><highlight class="stringliteral">&quot;e|&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="logica_8c_1a95da3229997179792b6581db14987043" kindref="member">eou</ref>(s);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(strcmp(token,<sp/></highlight><highlight class="stringliteral">&quot;e&amp;&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="logica_8c_1a88a26fe2f7954efa7c6167b7a14a6380" kindref="member">ee</ref>(s);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="tokenizador_8c_1a7d542ba2ab41ce00b9d61ecdc8f11cf5" kindref="member">verifica_variavel</ref>(carater)<sp/>==<sp/>1)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="manipulacao__da__stack_8c_1ac490948b1b7b49849d5ad42aea1b602f" kindref="member">variaveis</ref>(carater,<sp/>s,<sp/>letras);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(carater<sp/>==<sp/></highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal">)<sp/><ref refid="manipulacao__da__stack_8c_1a28ffe3d65cc55edf2213852a05f7a929" kindref="member">atribuivalorvariavel</ref>(token[1],<sp/>s,<sp/>letras);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tokenizador_8c_1a352292cf1b079e49ab476f2bfd672231" kindref="member">executa_funcao_aritmetica</ref>(carater,<sp/>s,<sp/>letras);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="tokenizador_8c_1a9d26424e8dc37c9b0734796c82cbffb7" kindref="member">verifica_carater</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>carater){</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>string_de_carateres<sp/>[52]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;+-*/()%#&amp;|^~@_;$\\lfic=:&lt;&gt;!?ABCDEFGHIJKLMNOPQRSTUVXYZ&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>resultado<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>string_de_carateres[i];<sp/>i++){</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(string_de_carateres[i]<sp/>==<sp/>carater)</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>resultado<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>resultado;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="tokenizador_8c_1a93b9df9bd284e25390d7f4d49683746a" kindref="member">verifica_string</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>token[]){</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>resultado<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((strcmp(token,<sp/></highlight><highlight class="stringliteral">&quot;e&gt;&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0)<sp/>||<sp/>(strcmp(token,<sp/></highlight><highlight class="stringliteral">&quot;e&lt;&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0)<sp/>||<sp/>(strcmp(token,<sp/></highlight><highlight class="stringliteral">&quot;e|&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0)<sp/>||<sp/>(strcmp(token,<sp/></highlight><highlight class="stringliteral">&quot;e&amp;&quot;</highlight><highlight class="normal">)<sp/><sp/>==<sp/>0))</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>resultado<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>resultado;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="tokenizador_8c_1a7d542ba2ab41ce00b9d61ecdc8f11cf5" kindref="member">verifica_variavel</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>token){</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>resultado<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>string_de_variaveis[25]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;ABCDEFGHIJKLMNOPQRSTUVXYZ&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>string_de_variaveis[i];<sp/>i++)</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(string_de_variaveis[i]<sp/>==<sp/>token)<sp/>resultado<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>resultado;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="tokenizador_8c_1a352292cf1b079e49ab476f2bfd672231" kindref="member">executa_funcao_aritmetica</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>carater,<sp/><ref refid="structstack" kindref="compound">STACK</ref><sp/>*s,<sp/><ref refid="structstack" kindref="compound">STACK</ref><sp/>*letras){</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(carater){</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>43:<sp/><ref refid="maths_8c_1ab036ce08365356af3d41ddf51b84d4b6" kindref="member">soma</ref>(s);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>sinal<sp/>+<sp/>em<sp/>notação<sp/>ASCII</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>45:<sp/><ref refid="maths_8c_1a90cd2dffdaa4518db18fc9804904e16e" kindref="member">subtrai</ref>(s);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>42:<sp/><ref refid="maths_8c_1a1a83e81a0989cfe6e96090f7fc2d2198" kindref="member">multiplica</ref>(s);<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>sinal<sp/>*<sp/>em<sp/>notação<sp/>ASCII</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>47:<sp/><ref refid="maths_8c_1a9d9afcdfcf47ca08bcd8b31031871b06" kindref="member">dividir</ref>(s);<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>sinal<sp/>/<sp/>em<sp/>notação<sp/>ASCII</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>40:<sp/><ref refid="maths_8c_1a954e9383095a145d1cb6a1a2d26aa451" kindref="member">decrementa</ref>(s);<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>sinal<sp/>(<sp/>em<sp/>notação<sp/>ASCII</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>41:<sp/><ref refid="maths_8c_1a10508636af2171860e5d038a7d07f7e0" kindref="member">incrementa</ref>(s);<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>sinal<sp/>)<sp/>em<sp/>notação<sp/>ASCII</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>37:<sp/><ref refid="maths_8c_1ac47c510fef88bce38e48b07b6017c54e" kindref="member">modulo</ref>(s);<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>sinal<sp/>%<sp/>em<sp/>notação<sp/>ASCII</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>35:<sp/><ref refid="maths_8c_1aee5455267a8b55e25e0a08fabf4a52f8" kindref="member">expoente</ref>(s);<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>sinal<sp/>#<sp/>em<sp/>notação<sp/>ASCII</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>38:<sp/><ref refid="maths_8c_1a24a2dde30b31ba5f47e7d2629db92f5a" kindref="member">e</ref>(s);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>sinal<sp/>&amp;<sp/>em<sp/>notação<sp/>ASCII</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>124:<sp/><ref refid="maths_8c_1a3429e63d3d7972ee8ebddf4423934dcd" kindref="member">ou</ref>(s);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>sinal<sp/>|<sp/>em<sp/>notação<sp/>ASCII</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>94:<sp/><ref refid="maths_8c_1a83f2bddece3797ca5d999ca6add31383" kindref="member">xorr</ref>(s);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>sinal<sp/>^<sp/>em<sp/>notação<sp/>ASCII</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>126:<sp/><ref refid="maths_8c_1a1d7fc0fc91e406a305818024758e17ae" kindref="member">nott</ref>(s);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>sinal<sp/>~<sp/>em<sp/>notação<sp/>ASCII</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>64:<sp/><ref refid="manipulacao__da__stack_8c_1a8d6e47ebf2e0f23fdaa5f791d9ba84da" kindref="member">rodatres</ref>(s);<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>sinal<sp/>@<sp/>em<sp/>notação<sp/>ASCII</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>92:<sp/><ref refid="manipulacao__da__stack_8c_1ad2c846231efe7651bd7edec4f3c7d1f9" kindref="member">trocadois</ref>(s);<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>sinal<sp/>\<sp/>em<sp/>notação<sp/>ASCII<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>95:<sp/><ref refid="manipulacao__da__stack_8c_1a6fa63cab9d7d96acf78f8dff5d4f782f" kindref="member">duplica</ref>(s);<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>sinal<sp/>_<sp/>em<sp/>notação<sp/>ASCII</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>59:<sp/><ref refid="manipulacao__da__stack_8c_1a1dda8549184f82c1edce0e7f2579d94e" kindref="member">popp</ref>(s);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>sinal<sp/>;<sp/>em<sp/>notação<sp/>ASCII</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>36:<sp/><ref refid="manipulacao__da__stack_8c_1a1bd9ef29df6e07b9c78e372df87d2732" kindref="member">copian</ref>(s);<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>sinal<sp/>$<sp/>em<sp/>notação<sp/>ASCII</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>105:<sp/><ref refid="manipulacao__da__stack_8c_1a19d6a8ccef6b6915205553b4e55c39c9" kindref="member">converte_para_long</ref>(s);<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>sinal<sp/>i<sp/>em<sp/>notação<sp/>ASCII</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>102:<sp/><ref refid="manipulacao__da__stack_8c_1ab03f874fda24ded3fc4efe7e63db06ae" kindref="member">converte_para_double</ref>(s);<sp/><sp/></highlight><highlight class="comment">//<sp/>sinal<sp/>f<sp/>em<sp/>notação<sp/>ASCII</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>99:<sp/><ref refid="manipulacao__da__stack_8c_1a8e9e35eeb711410f1c0362f29998ba30" kindref="member">converte_para_char</ref>(s);<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>sinal<sp/>c<sp/>em<sp/>notação<sp/>ASCII</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;<sp/><sp/></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>108:<sp/><ref refid="manipulacao__da__stack_8c_1abc9ce3a8867fe62b58febe960147e060" kindref="member">ler_linha</ref>(s,<sp/>letras);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>sinal<sp/>l<sp/>em<sp/>notação<sp/>ASCII</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>61:<sp/><ref refid="logica_8c_1af0660d82eeb7dcd538af4f22d778dfc8" kindref="member">igual</ref>(s);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>60:<sp/><ref refid="logica_8c_1aa14f0c5f29498e8b6fe16ffa6256d7af" kindref="member">menor</ref>(s);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>62:<sp/><ref refid="logica_8c_1aa7e47cdda15b522ab0f1e98dfa83e16d" kindref="member">maior</ref>(s);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>33:<sp/><ref refid="logica_8c_1a6ccbbdb78ac2739d4d38744bbc9ca8ea" kindref="member">nao</ref>(s);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>63:<sp/><ref refid="logica_8c_1ae836899daf6bd167a669c8260acfc77d" kindref="member">ifthenelse</ref>(s);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:<sp/>printf(</highlight><highlight class="stringliteral">&quot;Operação<sp/>inválida&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="182"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="tokenizador.c"/>
+  </compounddef>
+</doxygen>

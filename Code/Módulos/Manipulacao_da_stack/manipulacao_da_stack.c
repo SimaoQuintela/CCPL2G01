@@ -72,16 +72,15 @@ void copian(STACK *s){        // carater $
 /**
 * \author Simão Quintela
 * \brief converte o elemento que está no topo da stack para um long.
-* @param s Passagem da stack como parâmetro
+* @param s Passagem da stack como parametro
 */
 void converte_para_long(STACK *s){
     if(has_type(top(s), DOUBLE)){
         double x = pop_DOUBLE(s);
-
         push_LONG(s, (long)x);
+        
     } else if (has_type(top(s), CHAR)){
         char x = pop_CHAR(s);
-        
         push_LONG(s, (long)x);
     }
 }
@@ -89,16 +88,15 @@ void converte_para_long(STACK *s){
 /**
 * \author Simão Quintela
 * \brief converte o elemento que está no topo da stack para um double.
-* @param s Passagem da stack como parâmetro
+* @param s Passagem da stack como parametro
 */
 void converte_para_double(STACK *s){
     if(has_type(top(s), LONG)){
         long x = pop_LONG(s);
-
         push_DOUBLE(s, (double)x); 
+
     } else if (has_type(top(s), CHAR)){
         char x = pop_CHAR(s);
-        
         push_DOUBLE(s, (double)x);
     }
 }
@@ -106,16 +104,15 @@ void converte_para_double(STACK *s){
 /**
 * \author Simão Quintela
 * \brief converte o elemento que está no topo da stack para um char.
-* @param s Passagem da stack como parâmetro
+* @param s Passagem da stack como parametro
 */
 void converte_para_char(STACK *s){
     if(has_type(top(s), LONG)){
         long x = pop_LONG(s);
+        push_CHAR(s, (char)x);
 
-        push_CHAR(s, (char)x); 
     } else if (has_type(top(s), DOUBLE)){
         double x = pop_DOUBLE(s);
-        
         push_CHAR(s, (char)x);
     }
 }
@@ -123,13 +120,13 @@ void converte_para_char(STACK *s){
 /**
 * \author Simão Quintela
 * \brief lê uma nova linha e envia-a para o parse2 onde vai ser enviada para o tokenizador para ser interpretada sendo que no fim da sua interpretação não é imprimida.
-* @param s Passagem da stack como parâmetro
+* @param s Passagem da stack como parametro
+* @param letras Passagem das letras como parametro
 */
-void ler_linha(STACK *s){
+void ler_linha(STACK *s, STACK *letras){
     char linha[BUFSIZ];
     char *new_line = fgets(linha, BUFSIZ, stdin);
 
-    parse2(s, new_line);
+    parse2(s, letras, new_line);
 }
-
 

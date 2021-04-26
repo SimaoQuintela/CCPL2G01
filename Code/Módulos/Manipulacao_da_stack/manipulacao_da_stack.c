@@ -130,3 +130,40 @@ void ler_linha(STACK *s, STACK *letras){
     parse2(s, letras, new_line);
 }
 
+
+
+/**
+* \author Hugo Rocha
+* \brief dá push ao valor da letra correspondente para a stack
+* @param token Letra que vai ser lida
+* @param s Passagem da stack como parametro
+* @param letras Passagem das letras como parametro
+*/
+void variaveis(char token, STACK *s, STACK *letras){
+    int i;
+
+    for(i=65; i<=90; i++){
+        if(token == i) {
+            push(s, letras->stack[i-65]);
+        }
+    }
+}
+
+/**
+* \author Hugo Rocha
+* \brief Atribuição de valor às letras usadas no comando :letra
+* @param c Letra que vai receber o valor do topo da stack
+* @param s Passagem da stack como parametro 
+* @param letras Passagem das letras como parametro
+*/
+void atribuivalorvariavel(char c, STACK *s, STACK *letras){
+    int i;
+
+    for(i=65; i<=90; i++){
+        if(c == i) {
+            letras->stack[i-65] = top(s);
+        }
+    }
+}
+
+

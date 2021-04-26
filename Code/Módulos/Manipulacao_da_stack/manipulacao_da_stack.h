@@ -18,10 +18,6 @@ void converte_para_char(STACK *s);
 
 void ler_linha(STACK *s, STACK *letras);
 
-void emaior(STACK *s);
-
-void emenor(STACK *s);
-
 void variaveis(char token, STACK *s, STACK *letras);
 
 void atribuivalorvariavel(char token, STACK *s, STACK *letras);

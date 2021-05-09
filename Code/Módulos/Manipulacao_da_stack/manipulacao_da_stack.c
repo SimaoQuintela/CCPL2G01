@@ -1,4 +1,5 @@
-/** @file manipulacao_da_stack Módulo que contém as funções responsáveis pela manipulação da stack.
+/** 
+* @file manipulacao_da_stack Módulo que contém as funções responsáveis pela manipulação da stack.
 */
 
 #include <stdio.h>
@@ -7,10 +8,13 @@
 #include "maths.h"
 #include "parser.h"
 
+
+
+
 /**
 * \author Hugo Rocha
 * \brief Roda para a esquerda os três elementos que estão no topo da stack.
-* @param s Passagem da stack como parâmetro
+* @param s Passagem da stack como parametro
 */
 void rodatres(STACK *s){    // carater @
     DATA x = pop(s);
@@ -21,53 +25,48 @@ void rodatres(STACK *s){    // carater @
     push(s, z);
 }
 
-
 /**
 * \author Hugo Rocha
 * \brief troca os dois elementos que estão no topo da stack.
-* @param s Passagem da stack como parâmetro
+* @param s Passagem da stack como parametro
 */
 void trocadois(STACK *s){    // carater '\'
+    
     DATA x = pop(s);
     DATA y = pop(s);
     push(s, x);
     push(s, y);
 }
 
-
 /**
 * \author Hugo Rocha
 * \brief duplica o elemento que está no topo da stack.
-* @param s Passagem da stack como parâmetro
+* @param s Passagem da stack como parametro
 */
 void duplica(STACK *s){   // carater _
     DATA x = pop(s);
-    //pop(s);
     push(s, x);
     push(s, x);
 }
 
-
 /**
 * \author Hugo Rocha
 * \brief remove o elemento que está no topo da stack.
-* @param s Passagem da stack como parâmetro
+* @param s Passagem da stack como parametro
 */
 void popp(STACK *s){    // carater ;
     pop(s);
 }
 
-
 /**
 * \author Hugo Rocha
 * \brief copia o N-ésimo elemento para o topo da stack.
-* @param s Passagem da stack como parâmetro
+* @param s Passagem da stack como parametro
 */
 void copian(STACK *s){        // carater $
     int x = pop_LONG(s);
     push(s, enesimo(s, x));   // enesimo definida na stack
 }
-
 
 /**
 * \author Simão Quintela
@@ -130,8 +129,6 @@ void ler_linha(STACK *s, STACK *letras){
     parse2(s, letras, new_line);
 }
 
-
-
 /**
 * \author Hugo Rocha
 * \brief dá push ao valor da letra correspondente para a stack
@@ -165,5 +162,3 @@ void atribuivalorvariavel(char c, STACK *s, STACK *letras){
         }
     }
 }
-
-

@@ -12,7 +12,8 @@ typedef enum {
 	LONG = 1,	/**< Tipo Long com o valor 1 (2⁰) associado */
 	DOUBLE = 2, /**< Tipo Double com o valor 2 (2¹) associado */
 	CHAR = 4, 	/**< Tipo Char com o valor 4 (2²) associado */
-	STRING = 8	/**< Tipo String com o valor 8 (2³) associado */
+	STRING = 8,	/**< Tipo String com o valor 8 (2³) associado */
+	arrays = 16, /**< Tipo arrays com o valor 16 (2⁴) associado */
 } TYPE;
 
 /**
@@ -20,10 +21,12 @@ typedef enum {
 */
 typedef struct data {
 	TYPE type;		/**< tipos de dados vindos do enum TYPE */
+
 	long LONG;		/**< Tipo long */
 	double DOUBLE;	/**< Tipo double */
 	char CHAR;		/**< Tipo char */
 	char *STRING;	/**< Tipo string */
+	struct stack *arrays;	/**< Tipo arrays que é uma stack */
 } DATA;
 
 /**
@@ -46,6 +49,8 @@ DATA penultimo(STACK *s);
 void preencheLetras(STACK *letras);
 int is_empty(STACK *s);
 void print_stack(STACK *s);
+void print_stack2(STACK *s);
+void imprime(STACK *s);
 DATA enesimo(STACK *s, int n);
 
 /**
@@ -60,6 +65,7 @@ STACK_OPERATION_PROTO(long, LONG)
 STACK_OPERATION_PROTO(double, DOUBLE)
 STACK_OPERATION_PROTO(char, CHAR)
 STACK_OPERATION_PROTO(char *, STRING)
+STACK_OPERATION_PROTO(struct stack *, arrays)
 
 
 #endif

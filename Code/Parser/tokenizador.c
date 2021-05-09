@@ -9,6 +9,7 @@
 #include "maths.h"
 #include "manipulacao_da_stack.h"
 #include "logica.h"
+#include "arrays.h"
 
 
 
@@ -30,18 +31,24 @@ void tokenizador(STACK *s, STACK *letras, char* token){
   long val_l = strtol(token, &sobra1, 10);
   double val_d = strtod(token, &sobra2);    
 
-  if(strlen(sobra1) == 0)
+  if(strcmp(token, "S/") == 0)
+    separa_por_espaco(s);
+
+  else if(*token == ',')
+    range_array(s);
+
+  else if(strlen(sobra1) == 0)
   	push_LONG(s, val_l);
        
   else if(strlen(sobra2) == 0)
     push_DOUBLE(s, val_d);
 
-  else if((strlen(token) != 1) && (verifica_string(token) == 1) && (carater != ':'))/*(strcmp(token, "e>") != 0) && (strcmp(token, "e<") != 0)*/
-    push_STRING(s, token);
-        
-  else if((strlen(token) == 1) && (verifica_carater(carater) == 1) && (verifica_variavel(carater) == 0)) //&& (verifica_string(token) == 1))
-    push_CHAR(s, carater); 
+  
+  else if(carater == ':') atribuivalorvariavel(token[1], s, letras);
 
+  else if((strlen(token) != 1) && (verifica_string(token) == 1))
+  	push_STRING(s, token);
+        
   else if(strcmp(token, "e>") == 0)
     emaior(s);
 
@@ -54,13 +61,22 @@ void tokenizador(STACK *s, STACK *letras, char* token){
   else if(strcmp(token, "e&") == 0)
     ee(s);
 
+
   else if(verifica_variavel(carater) == 1)
     variaveis(carater, s, letras);
 
-  else if(carater == ':') atribuivalorvariavel(token[1], s, letras);
-
   else
   	executa_funcao_aritmetica(carater, s, letras);
+  
+}
+
+/**
+* \author Hugo Rocha
+* @param s Stack passada como parâmetro
+* @param token Token que está a ser interpretado
+*/
+void tokenizador_strings(STACK *s, char* token){
+   push_STRING(s, token);
 }
 
 /**
@@ -70,7 +86,7 @@ void tokenizador(STACK *s, STACK *letras, char* token){
 * @returns Caso o carater seja igual a qualquer um dos tokens contidos na string, a função retorna 0(falso), senão retorna 1(verdadeiro);
 */
 int verifica_carater(char carater){
-  char string_de_carateres [52] = "+-*/()%#&|^~@_;$\\lfic=:<>!?ABCDEFGHIJKLMNOPQRSTUVXYZ";
+  char string_de_carateres [55] = "+-*/()%#&|^~@_;$\\lfic=:<>!?ABCDEFGHIJKLMNOPQRSTUVWXYZ,";
   int resultado = 1;
 
   for(int i = 0; string_de_carateres[i]; i++){
@@ -81,6 +97,10 @@ int verifica_carater(char carater){
   return resultado;
 }
 
+
+
+
+
 /**
 * \author Hugo Rocha
 * \brief verifica se o token é uma string
@@ -90,7 +110,7 @@ int verifica_carater(char carater){
 int verifica_string(char token[]){
   int resultado = 1;
 
-  if ((strcmp(token, "e>") == 0) || (strcmp(token, "e<") == 0) || (strcmp(token, "e|") == 0) || (strcmp(token, "e&")  == 0))
+  if ((strcmp(token, "e>") == 0) || (strcmp(token, "e<") == 0) || (strcmp(token, "e|") == 0) || (strcmp(token, "e&")  == 0) || (strcmp(token, "S/") == 0) || (strcmp(token, "N/") == 0))
   	resultado = 0;
 
   return resultado;
@@ -105,7 +125,7 @@ int verifica_string(char token[]){
 int verifica_variavel(char token){
   int resultado = 0;
 
-  char string_de_variaveis[25] = "ABCDEFGHIJKLMNOPQRSTUVXYZ";
+  char string_de_variaveis[26] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
   for(int i = 0; string_de_variaveis[i]; i++)
     if(string_de_variaveis[i] == token) resultado = 1;
@@ -113,8 +133,6 @@ int verifica_variavel(char token){
 
   return resultado;
 }
-
-
 
 /**
 * \author Simão Quintela

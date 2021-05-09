@@ -27,7 +27,7 @@ int has_type(DATA elem, int mask){
 */
 STACK *new_stack(){
 	STACK *s = (STACK *) calloc(1, sizeof(STACK));
-	s->size = 100;
+	s->size = 200;
 	s->stack = (DATA *) calloc(s->size, sizeof(DATA));
 	return s;
 }
@@ -73,7 +73,7 @@ void preencheLetras(STACK *letras){
 */
 void push(STACK *s, DATA elem){
 	if(s->size == s->n_elems){
-		s->size += 100;
+		s->size += 200;
 		s->stack = (DATA *) realloc(s->stack, s->size * sizeof(DATA));
 	}
 	s->stack[s->n_elems] = elem;
@@ -144,10 +144,37 @@ void print_stack(STACK *s){
 				break;
 			case STRING: printf("%s", elem.STRING);
 				break;
+			case arrays: print_stack2(elem.arrays);
+				break;
 		}
 	}
 	printf("\n");
 }
+
+/**
+* \brief Imprime a stack sem o \n, é usada para imprimir arrays.
+* @param s Passagem da stack como parametro.
+*/
+void print_stack2(STACK *s){
+	for(int i = 0; i <s->n_elems; i++){
+		DATA elem = s->stack[i];
+		TYPE type = elem.type;
+		switch(type){
+			case LONG: printf("%ld", elem.LONG);
+				break;
+			case DOUBLE: printf("%g", elem.DOUBLE);
+				break;
+			case CHAR: printf("%c", elem.CHAR);
+				break;
+			case STRING: printf("%s", elem.STRING);
+				break;
+			case arrays: print_stack2(elem.arrays);
+				break;
+		}
+	}
+}
+
+
 
 /**
 * Macro que faz a substituição de texto de acordo com o stack_operation correspondente para podermos ter de uma forma rápida e eficiente um push e um pop para cada tipo.
@@ -172,3 +199,4 @@ STACK_OPERATION(long, LONG)
 STACK_OPERATION(double, DOUBLE)
 STACK_OPERATION(char, CHAR)
 STACK_OPERATION(char *, STRING)
+STACK_OPERATION(struct stack *, arrays)

@@ -16,7 +16,7 @@
 * \brief Função soma(+) para cada tipo, exceto strings.
 * @param s Passagem da stack como parametro
 */ 
-void soma(STACK *s){
+void soma(STACK *s){    
     if(has_type(top(s), LONG) && has_type(penultimo(s), LONG)){
         long x = pop_LONG(s);       // x long
         long y = pop_LONG(s);       // y long
@@ -77,7 +77,62 @@ void soma(STACK *s){
 
         double result = x + (double)y;
         push_DOUBLE(s, result);
+    } else if(has_type(top(s), LONG) && has_type(penultimo(s), STRING)){
+        long x = pop_LONG(s);
+        char* y = pop_STRING(s);
+
+        char* x2 = x + "\0";
+
+        push_STRING(s, strcat(y,x2));
+    } else if(has_type(top(s), STRING) && has_type(penultimo(s), STRING)){
+        char* x = pop_STRING(s);
+        char* y = pop_STRING(s);
+
+        char* r = calloc(1, sizeof(char)* (tamanho(x) + tamanho(y)));
+        strcpy(r, y);
+
+        push_STRING(s, strcat(r,x));
+    } else if(has_type(top(s), arrays) && (has_type(penultimo(s), CHAR) || has_type(penultimo(s), LONG) || has_type(penultimo(s), DOUBLE) )){
+        struct stack* x = pop_arrays(s);
+        DATA y = pop(s);
+
+        int i = x->n_elems;
+        push(x, x->stack[i-1]);
+        i--;
+        while(i > 0){
+            x->stack[i] = x->stack[i -1];
+            i--;
+        }
+       
+        x->stack[0] = y;
+
+        push_arrays(s, x);
+    } else if(has_type(top(s), arrays) && (has_type(penultimo(s), CHAR) || has_type(penultimo(s), LONG) || has_type(penultimo(s), DOUBLE) )){
+        struct stack* x = pop_arrays(s);
+        DATA y = pop(s);
+
+        push(x, y);
+
+        push_arrays(s, x);
+    } else if(has_type(top(s), LONG) && has_type(penultimo(s), arrays)){
+        long x = pop_LONG(s);
+        struct stack* array = pop_arrays(s);
+
+        push_LONG(array, x);
+        push_arrays(s, array);
+    } else if(has_type(top(s), arrays) && has_type(penultimo(s), arrays)){
+        struct stack* array1 = pop_arrays(s);   // juntar 1 ao 2
+        struct stack* array2 = pop_arrays(s);
+
+        int i = 0;
+        while(i < array1->n_elems){
+            push(array2,array1->stack[i]); 
+            i++;
+        }
+
+        push_arrays(s, array2);
     }
+
 }
 
 
@@ -218,7 +273,52 @@ void multiplica(STACK *s){
 
         double result = x * (double)y;
         push_DOUBLE(s, result);
-    }
+    } else if(has_type(top(s), LONG) && has_type(penultimo(s), STRING)){
+        long x = pop_LONG(s);
+        char *s1 = pop_STRING(s);
+        int i;
+        int j;
+        int k = 0;
+
+        char *resultado = malloc((((tamanho(s1))*x)+1)*(sizeof(char)));
+
+        for(i=0; i<(tamanho(s1)); i++){
+            resultado[i] = s1[i];
+        }
+        
+        for(j=i; j<((tamanho(s1)) * x); j++) {
+             resultado[j] = resultado[k];
+             k++;
+        }
+        resultado[(tamanho(s1)*x)] = '\0';
+
+        push_STRING(s, resultado);
+
+    } else if(has_type(top(s), LONG) && has_type(penultimo(s), arrays)){
+        long n = pop_LONG(s);
+        struct stack* array = pop_arrays(s);
+
+        long i;
+        long k = 0;
+        long tam = array->n_elems;
+
+
+        for(i=0; i<((n-1)*tam); i++){
+            if(array->size == array->n_elems){
+                array->size += 100;
+                array->stack = (DATA *) realloc(array->stack, array->size * sizeof(DATA));
+            }
+            array->stack[array->n_elems] = array->stack[k];
+            k++;
+            array->n_elems++;
+
+        }
+
+
+        push_arrays(s, array);
+
+    } 
+
 }
 
 /**
@@ -244,9 +344,9 @@ void dividir(STACK *s){
     } else if(has_type(top(s), LONG) && has_type(penultimo(s), DOUBLE)){
         long x = pop_LONG(s);       // x long
         double y = pop_DOUBLE(s);   // y double
-        assert(x != 0);  
+    //    assert(x != 0);  
 
-        double result = (double)y / x;  
+        double result = y / x;  
         push_DOUBLE(s, result);
 
     } else if(has_type(top(s), DOUBLE) && has_type(penultimo(s), LONG)){
@@ -296,282 +396,23 @@ void dividir(STACK *s){
 
         double result = y / (double)x;
         push_DOUBLE(s, result);
+    } else if(has_type(top(s), STRING) && has_type(penultimo(s), STRING)){
+        char *string_a_comparar = pop_STRING(s);
+        char *string_com_substrings = pop_STRING(s);
+
+        struct stack* array = new_stack();
+
+        char *token;
+
+        while(*string_com_substrings != '\0'){
+            token = strtok(string_com_substrings, string_a_comparar);
+            push_STRING(array, token);
+
+
+            string_com_substrings += tamanho(token) + tamanho(string_a_comparar);   // função do maths
+
+        }
+
+        push_arrays(s, array);
     }
-}
-
-/**
-* \author Hugo Rocha
-* \brief Função responsável por decrementar(() 1 unidade para cada tipo, exceto strings.
-* @param s Passagem da stack como parametro
-*/ 
-void decrementa(STACK *s){
- if(has_type(top(s), LONG)){
-        long x = pop_LONG(s);       // x long
-        push_LONG(s, x - 1);
-
-    } else if(has_type(top(s), DOUBLE)){
-        double x = pop_DOUBLE(s);   // x double
-        push_DOUBLE(s, x - 1);
-
-    } else if(has_type(top(s), CHAR)){
-        char x = pop_CHAR(s);       // x char
-
-        push_CHAR(s, x-1);
-    }
-  
-}
-
-/**
-* \author Hugo Rocha
-* \brief Função responsável por incrementar()) 1 unidade para cada tipo, exceto strings.
-* @param s Passagem da stack como parametro
-*/ 
-void incrementa(STACK *s){
-  if(has_type(top(s), LONG)){
-        long x = pop_LONG(s);       // x long
-        push_LONG(s, x + 1);
-
-    } else if(has_type(top(s), DOUBLE)){
-        double x = pop_DOUBLE(s);   // x double
-        push_DOUBLE(s, x + 1);
-
-    } else if(has_type(top(s), CHAR)){
-        char x = pop_CHAR(s);       // x char
-
-        push_CHAR(s, x + 1);
-    }
-  
-}
-
-
-
-/**
-* \author Nuno Costa
-* \brief Função módulo(%) para cada tipo, exceto strings e doubles.
-* @param s Passagem da stack como parametro
-*/ 
-void modulo(STACK *s){
-    if(has_type(top(s), LONG) && has_type(penultimo(s), LONG)){
-        long x = pop_LONG(s);       // x long
-        long y = pop_LONG(s);       // y long
-        assert(x != 0);
-
-        push_LONG(s, y%x);
-    } else if(has_type(top(s), CHAR) && has_type(penultimo(s), CHAR)){
-        char x = pop_CHAR(s);       // x char
-        char y = pop_CHAR(s);       // y char
-        assert(x != 0);
-
-        long result =  (long)y % (long)x;
-        push_LONG(s, result);
-
-    } else if(has_type(top(s), CHAR) && has_type(penultimo(s), LONG)){
-        char x = pop_CHAR(s);       // x char
-        long y = pop_LONG(s);       // y long 
-        assert(x != 0);
-
-        long result = y % (long)x;
-        push_LONG(s, result);
-
-    } else if(has_type(top(s), LONG) && has_type(penultimo(s), CHAR)){
-        long x = pop_LONG(s);       // x long
-        char y = pop_CHAR(s);       // y char
-        assert(x != 0);
-
-        long result = (long)y % x;
-        push_LONG(s, result);
-    }
-}
-
-
-/**
-* \author Tiago Guedes
-* \brief Função expoente(#) para cada tipo, exceto strings.
-* @param s Passagem da stack como parametro
-*/ 
-void expoente(STACK *s){
-    if(has_type(top(s), LONG) && has_type(penultimo(s), LONG)){
-        long x = pop_LONG(s);       // x long
-        long y = pop_LONG(s);       // y long
-
-        push_LONG(s, pow(y,x));
-
-    } else if(has_type(top(s), DOUBLE) && has_type(penultimo(s), DOUBLE)){
-        double x = pop_DOUBLE(s);   // x double
-        double y = pop_DOUBLE(s);   // y double
-
-        push_DOUBLE(s, pow(y,x));
-
-    } else if(has_type(top(s), LONG) && has_type(penultimo(s), DOUBLE)){
-        long x = pop_LONG(s);       // x long
-        double y = pop_DOUBLE(s);   // y double
-
-        double result = pow(y,(double)x);  
-        push_DOUBLE(s, result);
-
-    } else if(has_type(top(s), DOUBLE) && has_type(penultimo(s), LONG)){
-        double x = pop_DOUBLE(s);   // x double
-        long y =  pop_LONG(s);      // y long
-
-        double result = pow((double)y,x);
-        push_DOUBLE(s, result);
-
-    } else if(has_type(top(s), CHAR) && has_type(penultimo(s), CHAR)){
-        char x = pop_CHAR(s);       // x char
-        char y = pop_CHAR(s);       // y char
-
-        long result = pow((long)y,(long)x);
-        push_LONG(s, result);
-
-    } else if(has_type(top(s), CHAR) && has_type(penultimo(s), LONG)){
-        char x = pop_CHAR(s);       // x char
-        long y = pop_LONG(s);       // y long 
-
-        long result = pow(y,(long)x);
-        push_LONG(s, result);
-
-    } else if(has_type(top(s), LONG) && has_type(penultimo(s), CHAR)){
-        long x = pop_LONG(s);       // x long
-        char y = pop_CHAR(s);       // y char
-
-        long result = pow((long)y,x);
-        push_LONG(s, result);
-
-    } else if(has_type(top(s), CHAR) && has_type(penultimo(s), DOUBLE)){
-        char x = pop_CHAR(s);       // x char 
-        double y = pop_DOUBLE(s);   // y double
-
-        double result = pow(y,(double)x);
-        push_DOUBLE(s, result);
-
-    } else if(has_type(top(s), DOUBLE) && has_type(penultimo(s), CHAR)){
-        double x = pop_DOUBLE(s);   // x double 
-        char y = pop_CHAR(s);       // y char
-
-        double result = pow((double)y,x);
-        push_DOUBLE(s, result);
-    }
-}
-
-
-/**
-* \author Tiago Guedes
-* \brief Função "e"(&) responsável por determinar a interseção de bits entre dois números inteiros.
-* @param s Passagem da stack como parametro
-*/ 
-void e(STACK *s){
-    if(has_type(top(s), LONG) && has_type(penultimo(s), LONG)){
-        long x = pop_LONG(s);       // x long
-        long y = pop_LONG(s);       // y long
-
-        push_LONG(s, y & x);
-
-    } else if(has_type(top(s), CHAR) && has_type(penultimo(s), CHAR)){
-        char x = pop_CHAR(s);       // x char
-        char y = pop_CHAR(s);       // y char
-
-        long result = (long)y & (long)x;
-        push_LONG(s, result);
-
-    } else if(has_type(top(s), CHAR) && has_type(penultimo(s), LONG)){
-        char x = pop_CHAR(s);       // x char
-        long y = pop_LONG(s);       // y long
-
-        long result = (long)y & x;
-        push_LONG(s, result);
-
-    } else if(has_type(top(s), LONG) && has_type(penultimo(s), CHAR)){
-        long x = pop_LONG(s);       // x long
-        char y = pop_CHAR(s);       // y char
-
-        long result = y & (long)x;
-        push_LONG(s, result);
-    }
-}
-
-/**
-* \author Tiago Guedes
-* \brief Função "ou"(|) responsável por determinar a reunião de bits entre dois números inteiros.
-* @param s Passagem da stack como parametro
-*/ 
-void ou(STACK *s){
-    if(has_type(top(s), LONG) && has_type(penultimo(s), LONG)){
-        long x = pop_LONG(s);       // x long
-        long y = pop_LONG(s);       // y long
-
-        push_LONG(s, y | x);
-
-    } else if(has_type(top(s), CHAR) && has_type(penultimo(s), CHAR)){
-        char x = pop_CHAR(s);       // x char
-        char y = pop_CHAR(s);       // y char
-
-        long result = (long)y | (long)x;
-        push_LONG(s, result);
-
-    } else if(has_type(top(s), CHAR) && has_type(penultimo(s), LONG)){
-        char x = pop_CHAR(s);       // x char
-        long y = pop_LONG(s);       // y long
-
-        long result = (long)y | x;
-        push_LONG(s, result);
-
-    } else if(has_type(top(s), LONG) && has_type(penultimo(s), CHAR)){
-        long x = pop_LONG(s);       // x long
-        char y = pop_CHAR(s);       // y char
-
-        long result = y | (long)x;
-        push_LONG(s, result);
-    }
-}
-
-/**
-* \author Paulo Vasconcelos
-* \brief Função xor(^) responsável por colocar a 0 todos os bits em comum e a 1 todos os bits diferentes entre si, de dois números e calcular o seu resultado.
-* @param s Passagem da stack como parametro
-*/ 
-void xorr(STACK *s){
- if(has_type(top(s), LONG) && has_type(penultimo(s), LONG)){
-        long x = pop_LONG(s);       // x long
-        long y = pop_LONG(s);       // y long
-
-        push_LONG(s, y ^ x);
-    } else if(has_type(top(s), CHAR) && has_type(penultimo(s), CHAR)){
-        char x = pop_CHAR(s);       // x char
-        char y = pop_CHAR(s);       // y char
-
-        long result = (long)y ^ (long)x;
-        push_LONG(s, result);
-
-    } else if(has_type(top(s), CHAR) && has_type(penultimo(s), LONG)){
-        char x = pop_CHAR(s);       // x char
-        long y = pop_LONG(s);       // y long
-
-        long result = (long)y ^ x;
-        push_LONG(s, result);
-
-    } else if(has_type(top(s), LONG) && has_type(penultimo(s), CHAR)){
-        long x = pop_LONG(s);       // x long
-        char y = pop_CHAR(s);       // y char
-
-        long result = y ^ (long)x;
-        push_LONG(s, result);
-    }
-}
-/**
-* \author Paulo Vasconcelos
-* \brief Função nott responsável por inverter todos os bits de um número inteiro
-* @param s Passagem da stack como parametro
-*/ 
-void nott(STACK *s){
-  if(has_type(top(s), LONG)){
-        long x = pop_LONG(s);       // x long
-        push_LONG(s, ~x);
-
-    } else if(has_type(top(s), CHAR)){
-        char x = pop_CHAR(s);       // x char
-        long y = (long)x;
-
-        push_LONG(s, ~y);
-    }
-
 }

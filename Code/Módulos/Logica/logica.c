@@ -1,10 +1,9 @@
 /**
 * @file logica Modulo que contem as funções lógicas
 */
-
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <string.h>
 
 #include "stack.h"
 #include "logica.h"
@@ -77,7 +76,16 @@ void emaior(STACK *s){
             
         if (x>=y) push_DOUBLE(s, x);
         else push_CHAR(s, y);
-    }
+    
+    }   else if(has_type(top(s), STRING) && has_type(penultimo(s), STRING)){
+            char *s1 = pop_STRING(s);
+            char *s2 = pop_STRING(s);
+
+            if(strcmp(s2, s1) > 0){
+                push_STRING(s, s2);
+            } else 
+                push_STRING(s, s1);
+        }
 }
 
 
@@ -148,7 +156,16 @@ void emenor(STACK *s){
             
         if (x>=y) push_CHAR(s, y);
         else push_DOUBLE(s, x);
-    }
+
+    }   else if(has_type(top(s), STRING) && has_type(penultimo(s), STRING)){
+            char *s1 = pop_STRING(s);
+            char *s2 = pop_STRING(s);
+
+            if(strcmp(s2, s1) > 0){
+                push_STRING(s, s1);
+            } else 
+              push_STRING(s, s2);
+        }
 }
 
 
@@ -219,9 +236,35 @@ void igual(STACK *s){
             
         if (x==y) push_LONG(s, 1);
         else push_LONG(s, 0);
+    } else if(  has_type(top(s), LONG) && has_type(penultimo(s), arrays)    ){
+           long n = pop_LONG(s);
+           struct stack* array = pop_arrays(s);
+
+           push(s, array->stack[n]);
+
+    } else if(  has_type(top(s), CHAR) && has_type(penultimo(s), arrays)    ){
+           char n = pop_CHAR(s);
+           struct stack* array = pop_arrays(s);
+
+           push(s, enesimo(array, (long)n));
+    } else if(has_type(top(s), LONG) && has_type(penultimo(s), STRING)){
+        long x = pop_LONG(s);
+        char *string = pop_STRING(s);
+
+        push_CHAR(s, string[x]);
+
+    } else if(has_type(top(s), STRING) && has_type(penultimo(s), STRING)){
+        char* s1 = pop_STRING(s);
+        char* s2 = pop_STRING(s);
+
+        if(strcmp(s1,s2) == 0) push_LONG(s, 1);
+        else push_LONG(s, 0);
+    
+
     }
 
 }
+
 
 
 /**
@@ -291,6 +334,20 @@ void menor(STACK *s){
             
         if (x>=y) push_LONG(s, 1);
         else push_LONG(s, 0);
+    
+    }  else if(has_type(top(s), LONG) && has_type(penultimo(s), STRING)){
+        long x = pop_LONG(s);
+        char* string = pop_STRING(s);
+
+        char *string2 = malloc(sizeof(char)*x);
+
+        push_STRING(s, memcpy(string2, string, x));
+    }  else if(has_type(top(s), STRING) && has_type(penultimo(s), STRING)){
+        char* s1 = pop_STRING(s);
+        char* s2 = pop_STRING(s);
+
+        push_LONG(s, strcmp(s2, s1)<0);
+        
     }
 
 }
@@ -362,6 +419,28 @@ void maior(STACK *s){
             
         if (x<y) push_LONG(s, 1);
         else push_LONG(s, 0);
+    
+    }   else if(has_type(top(s), LONG) && has_type(penultimo(s), STRING)){
+        long x = pop_LONG(s);
+        char* string = pop_STRING(s);
+        int i = 0;
+        
+
+        char* r = calloc(1, sizeof(char)* (x+1));
+
+        while(x != 0){
+            r[i] = string[strlen(string) - x];
+            i++;
+            x--; 
+        }
+
+        push_STRING(s, r);
+    } else if(has_type(top(s), STRING) && has_type(penultimo(s), STRING)){
+        char* s1 = pop_STRING(s);
+        char* s2 = pop_STRING(s);
+
+        push_LONG(s, strcmp(s2, s1)>0);
+        
     }
 
 
@@ -398,29 +477,28 @@ void nao(STACK *s){
 * @param s Passagem da stack como parametro
 */
 void ifthenelse(STACK *s){   // 1 2 3 ? = 2
-    DATA x = pop(s);
-    DATA y = pop(s);
+    DATA x = pop(s);    // 2 
+    DATA y = pop(s);    // 3
     
 
     if(has_type(top(s), LONG)){
         long z = pop_LONG(s);
         if (z == 0) push(s, x);
         else push(s, y);
-    }
-
-    else if(has_type(top(s), DOUBLE)){
+    } else if(has_type(top(s), DOUBLE)){
         double z = pop_DOUBLE(s);
         if (z == 0) push(s, x);
         else push(s, y);
-    }
-
-
-    else if(has_type(top(s), CHAR)){
+    } else if(has_type(top(s), CHAR)){
         char z = pop_CHAR(s);
         if (z == 0) push(s, x);
         else push(s, y);
-    }
 
+    } else if(has_type(top(s), arrays)){
+        struct stack* array = pop_arrays(s);
+        if(array->n_elems == 0) push(s,x);
+        else push (s,y);
+    }
       
 }
 
@@ -585,4 +663,3 @@ void eou(STACK *s){
 
 
 }
-

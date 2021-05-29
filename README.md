@@ -6,4 +6,6 @@ Grupo composto por: <br/>
 · A96463 - Hugo Rocha <br/>
 · A97369 - Tiago Guedes <br/>
 · A97610 - Nuno Costa <br/>
-· A97614 - Samuel Vasconcelos
+· A97614 - Samuel Vasconcelos <br/>
+
+Classificação final: 17
